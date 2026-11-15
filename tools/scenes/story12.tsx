@@ -129,9 +129,9 @@ const GamesCount: React.FC<SceneProps> = ({scene, durationInFrames: dur}) => {
       </div>
       {new Array(num).fill(0).map((_, i) => {
         const col = i % 8, row = Math.floor(i / 8);
-        return <div key={i} style={{position: 'absolute', left: 110 + col * 110, top: 700 + row * 112, opacity: i < shown ? 1 : 0.08, scale: i === shown - 1 ? '1.3' : '1'}}><Shirt num="" w={80} /></div>;
+        return <div key={i} style={{position: 'absolute', left: 110 + col * 110, top: 700 + row * 112, opacity: i < shown ? 1 : 0.08, scale: i === shown - 1 ? '1.3' : '1'}}>{scene.icon === 'ball' ? <div style={{width: 84, height: 84, borderRadius: 42, background: 'radial-gradient(circle at 35% 35%, #fff, #d4d4d4)', border: `6px solid ${OL}`}} /> : <Shirt num="" w={80} />}</div>;
       })}
-      {scene.sub ? <Tag text={scene.sub as string} at={Math.round(dur * 0.6)} y={1380} size={58} color="#fff" rot={-2} /> : null}
+      {scene.sub ? <Tag text={scene.sub as string} at={Math.round(dur * 0.6)} y={1080} size={58} color="#fff" rot={-2} /> : null}
     </Camera>
   );
 };
