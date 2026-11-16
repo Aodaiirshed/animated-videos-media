@@ -18,7 +18,7 @@ const Tag: React.FC<{text: string; at: number; y: number; color?: string; size?:
   const s = spring({frame: frame - a, fps, config: {damping: 10, stiffness: 190}});
   return (
     <div style={{position: 'absolute', left: 40, width: 1000, top: y, textAlign: 'center', opacity: frame >= a ? 1 : 0, scale: String(1.6 - s * 0.6), rotate: `${rot}deg`}}>
-      <span style={{fontFamily: DISPLAY, fontSize: size, color: fg, background: color, padding: '4px 28px', borderRadius: 16, border: `6px solid ${OL}`, boxShadow: `0 9px 0 ${OL}`}}>{text}</span>
+      <span dir="auto" style={{unicodeBidi: 'plaintext', fontFamily: DISPLAY, fontSize: size, color: fg, background: color, padding: '4px 28px', borderRadius: 16, border: `6px solid ${OL}`, boxShadow: `0 9px 0 ${OL}`}}>{text}</span>
     </div>
   );
 };
@@ -159,7 +159,7 @@ const WasteHeadlines: React.FC<SceneProps> = ({sb, scene, captions, durationInFr
           <Shake key={i} at={a} amount={8}>
             <div style={{position: 'absolute', left: 90 + (i % 2) * 40, top: 300 + i * 300, width: 860, height: 260, background: '#f5f5f4', border: `8px solid ${OL}`, rotate: `${[-4, 3, -2][i % 3]}deg`, opacity: frame >= a ? 1 : 0, scale: String(1.5 - s * 0.5), boxShadow: '0 12px 0 rgba(0,0,0,0.4)'}}>
               <div style={{position: 'absolute', left: 30, top: 18, fontFamily: BODY, fontWeight: 800, fontSize: 30, color: '#57534e', letterSpacing: 6}}>THE DAILY SPORT</div>
-              <div style={{position: 'absolute', left: 30, right: 30, top: 74, fontFamily: DISPLAY, fontSize: 92, color: '#b91c1c', lineHeight: 1}}>{h}</div>
+              <div dir="auto" style={{unicodeBidi: 'plaintext', position: 'absolute', left: 30, right: 30, top: 74, fontFamily: DISPLAY, fontSize: 92, color: '#b91c1c', lineHeight: 1}}>{h}</div>
               <div style={{position: 'absolute', left: 30, right: 30, bottom: 26, height: 14, background: '#d6d3d1', boxShadow: '0 -26px 0 #d6d3d1'}} />
             </div>
           </Shake>
