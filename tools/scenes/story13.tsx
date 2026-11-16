@@ -116,8 +116,9 @@ const ClubNo: React.FC<SceneProps> = ({sb, scene, captions, durationInFrames: du
           {[0, 1, 2, 3].map((i) => <div key={`b${i}`} style={{position: 'absolute', left: 60, top: 420 + i * 50, width: 480 - (i % 2) * 120, height: 14, background: '#cbd5e1', borderRadius: 7}} />)}
         </div>
         <Stamp text={(scene.stamp as string) ?? 'NO THANKS'} at={sAt} y={700} size={150} rot={-12} />
-        <Tag text={(scene.tag as string) ?? 'BIG CLUB TRIAL'} at={4} y={230} size={70} color="#fff" rot={-2} />
+        <Tag text={(scene.tag as string) ?? 'BIG CLUB TRIAL'} at={scene.badge ? -12 : 4} y={230} size={70} color="#fff" rot={-2} />
       </Camera>
+      {scene.badge ? <SeriesBadge text={scene.badge as string} /> : null}
     </Shake>
   );
 };

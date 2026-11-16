@@ -4,6 +4,7 @@ import type {SceneProps} from '../types';
 import {Boy} from '../components/Boy';
 import {Camera, Shake} from '../components/Fx';
 import {wordFrame} from './kit';
+import {DailyPill} from '../components/Host';
 import {BODY, DISPLAY} from '../fonts';
 
 /* Story set 12 (cartoon): retiredShirt, dadCounter, gamesCount, overheadKick (guess video) + answerHook, winnersCard (answer video). */
@@ -132,6 +133,7 @@ const GamesCount: React.FC<SceneProps> = ({scene, durationInFrames: dur}) => {
         return <div key={i} style={{position: 'absolute', left: 110 + col * 110, top: 700 + row * 112, opacity: i < shown ? 1 : 0.08, scale: i === shown - 1 ? '1.3' : '1'}}>{scene.icon === 'ball' ? <div style={{width: 84, height: 84, borderRadius: 42, background: 'radial-gradient(circle at 35% 35%, #fff, #d4d4d4)', border: `6px solid ${OL}`}} /> : <Shirt num="" w={80} />}</div>;
       })}
       {scene.sub ? <Tag text={scene.sub as string} at={Math.round(dur * 0.6)} y={1080} size={58} color="#fff" rot={-2} /> : null}
+      {scene.pill ? <DailyPill from={Math.round(dur * 0.5)} y={1220} /> : null}
     </Camera>
   );
 };
@@ -204,6 +206,9 @@ const WinnersCard: React.FC<SceneProps> = ({scene, captions, durationInFrames: d
   const oAt = at(captions, scene.onWord, fps, 4);
   const rows = (scene.rows as {platform: string; user: string | null; note?: string}[]) ?? [];
   const trophy = spring({frame: frame - oAt, fps, config: {damping: 9, stiffness: 160}});
+  const compact = rows.length > 3;
+  const rowH = compact ? 168 : 230;
+  const rowTop = compact ? 630 : 760;
   return (
     <Shake at={oAt} amount={14}>
       <Camera dur={dur} from={1.0} to={1.06}>
@@ -212,20 +217,20 @@ const WinnersCard: React.FC<SceneProps> = ({scene, captions, durationInFrames: d
           const t = ((frame + i * 9) % 90) / 90;
           return <div key={i} style={{position: 'absolute', left: random(`cf${i}`) * 1080, top: -40 + t * 1900, width: 22, height: 34, background: ['#fbbf24', '#ef4444', '#22c55e', '#60a5fa', '#f8fafc'][i % 5], rotate: `${frame * 7 + i * 30}deg`, opacity: frame >= oAt ? 0.9 : 0}} />;
         })}
-        <svg width={300} height={320} viewBox="0 0 300 320" style={{position: 'absolute', left: 390, top: 200, scale: String(trophy)}}>
+        <svg width={300} height={320} viewBox="0 0 300 320" style={{position: 'absolute', left: 390, top: compact ? 190 : 200, scale: String(trophy * (compact ? 0.95 : 1))}}>
           <path d="M70 30 L230 30 L220 140 Q150 220 80 140 Z" fill="#fbbf24" stroke={OL} strokeWidth={10} strokeLinejoin="round" />
           <path d="M70 50 Q10 50 30 110 Q45 140 85 135 M230 50 Q290 50 270 110 Q255 140 215 135" stroke={OL} strokeWidth={10} fill="none" />
           <rect x={130} y={200} width={40} height={50} fill="#d97706" stroke={OL} strokeWidth={8} />
           <rect x={80} y={250} width={140} height={50} rx={8} fill="#92400e" stroke={OL} strokeWidth={8} />
           <text x={150} y={130} textAnchor="middle" fontFamily={DISPLAY} fontSize={70} fill="#fff7d6" stroke={OL} strokeWidth={4} paintOrder="stroke">#1</text>
         </svg>
-        <div style={{position: 'absolute', top: 560, width: '100%', textAlign: 'center', fontFamily: DISPLAY, fontSize: 100, color: '#fff', WebkitTextStroke: `8px ${OL}`, paintOrder: 'stroke fill', opacity: trophy}}>{(scene.title as string) ?? 'FIRST TO GET IT'}</div>
+        <div style={{position: 'absolute', top: compact ? 520 : 560, width: '100%', textAlign: 'center', fontFamily: DISPLAY, fontSize: compact ? 90 : 100, color: '#fff', WebkitTextStroke: `8px ${OL}`, paintOrder: 'stroke fill', opacity: trophy}}>{(scene.title as string) ?? 'FIRST TO GET IT'}</div>
         {rows.map((r, i) => {
           const s = spring({frame: frame - oAt - 8 - i * 10, fps, config: {damping: 12}});
           return (
-            <div key={i} style={{position: 'absolute', left: 90, width: 900, top: 760 + i * 230, height: 190, background: '#fffbeb', border: `10px solid ${OL}`, borderRadius: 30, boxShadow: `0 12px 0 ${OL}`, translate: `${(1 - s) * 1200}px 0`}}>
-              <div style={{position: 'absolute', left: 30, top: 20, fontFamily: BODY, fontWeight: 800, fontSize: 40, color: '#92400e'}}>{r.platform.toUpperCase()}</div>
-              <div style={{position: 'absolute', left: 30, top: 74, fontFamily: r.user ? BODY : DISPLAY, fontWeight: 900, fontSize: r.user ? 66 : 56, lineHeight: 1.25, color: OL, whiteSpace: 'nowrap'}}>{r.user ? `@${r.user}` : (r.note ?? 'nobody yet')}</div>
+            <div key={i} style={{position: 'absolute', left: 90, width: 900, top: rowTop + i * rowH, height: rowH - (compact ? 22 : 40), background: '#fffbeb', border: `10px solid ${OL}`, borderRadius: 30, boxShadow: `0 12px 0 ${OL}`, translate: `${(1 - s) * 1200}px 0`}}>
+              <div style={{position: 'absolute', left: 30, top: compact ? 10 : 20, fontFamily: BODY, fontWeight: 800, fontSize: compact ? 30 : 40, color: '#92400e'}}>{r.platform.toUpperCase()}</div>
+              <div style={{position: 'absolute', left: 30, top: compact ? 40 : 74, fontFamily: r.user ? BODY : DISPLAY, fontWeight: 900, fontSize: compact ? (r.user ? 50 : 44) : (r.user ? 66 : 56), lineHeight: 1.25, color: OL, whiteSpace: 'nowrap'}}>{r.user ? `@${r.user}` : (r.note ?? 'nobody yet')}</div>
             </div>
           );
         })}
