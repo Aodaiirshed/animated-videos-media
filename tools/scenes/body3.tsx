@@ -124,6 +124,7 @@ const B1Cell: React.FC<SceneProps> = ({scene, captions, durationInFrames: dur}) 
   const ps = spring({frame, fps, config: {damping: 10, stiffness: 180}});
   const move = interpolate(frame, [cAt - 4, cAt + 14], [0, 1], clamp);
   const on = frame >= sAt;
+  const eAt = at(captions, scene.energyOnWord, fps, -1);
   return (
     <AbsoluteFill>
       <Shake at={sAt} amount={10}>
@@ -140,6 +141,7 @@ const B1Cell: React.FC<SceneProps> = ({scene, captions, durationInFrames: dur}) 
             <div style={{width: 360, height: 170, borderRadius: 85, background: 'linear-gradient(90deg, #ef4444 50%, #fde047 50%)', border: `10px solid ${OL}`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: DISPLAY, fontSize: 110, color: '#fff', WebkitTextStroke: `7px ${OL}`, paintOrder: 'stroke fill'}}>B1</div>
           </div>
           <Tag text={(scene.label as string) ?? 'VITAMIN B1'} at={4} y={260} size={92} color="#ffcc4d" rot={-3} />
+          {scene.energyOnWord && frame >= eAt ? <Tag text={(scene.energy as string) ?? 'FOOD → ENERGY FOR NERVES + MUSCLES'} at={eAt} y={1490} size={46} color="#fff" rot={1} /> : null}
           {frame >= cAt ? <Tag text="GENE 1: CARRIES IT IN" at={cAt} y={400} size={50} color="#fff" rot={2} /> : null}
           {on ? <Tag text="GENE 2: SWITCHES IT ON" at={sAt} y={490} size={50} color="#bbf7d0" rot={-2} /> : null}
         </Camera>
