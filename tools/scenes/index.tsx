@@ -43,6 +43,8 @@ import {WOJTEK_SCENES} from './wojtek';
 import {STORY17_SCENES} from './story17';
 import {TRYTHIS2_SCENES} from './trythis2';
 import {STORY18_SCENES} from './story18';
+import {RULE2_SCENES} from './rule2';
+import {WHATIF4_SCENES} from './whatif4';
 import {HISTORY1_SCENES} from './history1';
 import {HISTORY2_SCENES} from './history2';
 import {HISTORY3_SCENES} from './history3';
@@ -447,6 +449,8 @@ export const SCENES: Record<string, React.FC<SceneProps>> = {
   ...STORY17_SCENES,
   ...TRYTHIS2_SCENES,
   ...STORY18_SCENES,
+  ...RULE2_SCENES,
+  ...WHATIF4_SCENES,
   ...HISTORY1_SCENES,
   ...HISTORY2_SCENES,
   ...HISTORY3_SCENES,
