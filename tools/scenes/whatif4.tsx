@@ -215,4 +215,140 @@ const NeckCost: React.FC<SceneProps> = ({scene, captions, durationInFrames: dur}
   );
 };
 
-export const WHATIF4_SCENES: Record<string, React.FC<SceneProps>> = {owlWake: OwlWake, lockedEyes: LockedEyes, turnPick: TurnPick, turnReveal: TurnReveal, neckCost: NeckCost};
+
+/* lightCatch: { lightOnWord, huntOnWord } — night field: light rays pour into one huge owl eye; a tiny mouse lights up in the grass. */
+const LightCatch: React.FC<SceneProps> = ({scene, captions}) => {
+  const frame = useCurrentFrame();
+  const {fps} = useVideoConfig();
+  const lAt = at(captions, scene.lightOnWord, fps, 10);
+  const hAt = at(captions, scene.huntOnWord, fps, 60);
+  const rays = interpolate(frame, [lAt, lAt + 15], [0, 1], clamp);
+  const mouse = interpolate(frame, [hAt, hAt + 10], [0, 1], clamp);
+  return (
+    <AbsoluteFill style={{background: 'linear-gradient(180deg, #0b1230 0%, #152046 70%, #1d3a2a 70%, #12261b 100%)'}}>
+      {new Array(40).fill(0).map((_, i) => <div key={i} style={{position: 'absolute', left: (i * 263) % 1080, top: 300 + ((i * 137) % 500), width: 5, height: 5, borderRadius: 3, background: '#fff', opacity: 0.4 + 0.4 * Math.abs(Math.sin(frame / 15 + i))}} />)}
+      <svg width={1080} height={1000} style={{position: 'absolute', left: 0, top: 300}}>
+        {[0, 1, 2, 3, 4, 5].map((i) => <line key={i} x1={1080} y1={40 + i * 90} x2={1080 - rays * (700 - i * 20)} y2={300 + (i - 2.5) * 12} stroke="#fff6b0" strokeWidth={10} opacity={0.55} strokeLinecap="round" />)}
+        <circle cx={300} cy={300} r={170} fill="#ffb000" stroke={OL} strokeWidth={10} />
+        <circle cx={300} cy={300} r={100 + rays * 25} fill={OL} />
+        <circle cx={330} cy={260} r={22} fill="#fff" />
+        <circle cx={300} cy={300} r={186} fill="none" stroke="#d6cbb4" strokeWidth={14} strokeDasharray="18 10" />
+      </svg>
+      <svg width={180} height={110} viewBox="0 0 180 110" style={{position: 'absolute', left: 700, top: 1100, opacity: 0.25 + mouse * 0.75}}>
+        <ellipse cx={90} cy={70} rx={60} ry={34} fill="#9aa0a6" stroke={OL} strokeWidth={5} />
+        <circle cx={140} cy={46} r={16} fill="#9aa0a6" stroke={OL} strokeWidth={5} /><circle cx={150} cy={66} r={5} fill={OL} />
+        <path d="M30 76 Q0 90 10 106" stroke={OL} strokeWidth={5} fill="none" />
+      </svg>
+      {frame >= hAt ? <div style={{position: 'absolute', left: 640, top: 1030, fontFamily: DISPLAY, fontSize: 48, color: '#ffcc4d'}}>SPOTTED.</div> : null}
+      <Tag text="MORE LIGHT IN" a={lAt} y={330} size={66} />
+      <Syn x={90} y={1080} size={190} pose="point" from={Math.round(hAt)} to={9999} />
+    </AbsoluteFill>
+  );
+};
+
+/* tubeEye: { tubeOnWord, lockOnWord, headOnWord } — side view: your round eyeball vs the owl's tube eye held by a ring of bone; then the head turns instead. */
+const TubeEye: React.FC<SceneProps> = ({scene, captions}) => {
+  const frame = useCurrentFrame();
+  const {fps} = useVideoConfig();
+  const tAt = at(captions, scene.tubeOnWord, fps, 10);
+  const lAt = at(captions, scene.lockOnWord, fps, 40);
+  const hAt = at(captions, scene.headOnWord, fps, 90);
+  const morph = spring({frame: frame - tAt, fps, config: {damping: 14}});
+  const ring = interpolate(frame, [lAt, lAt + 10], [0, 1], clamp);
+  if (frame >= hAt - 2) {
+    const turn = interpolate(frame, [hAt, hAt + 14], [0, -24], clamp);
+    return (
+      <Room tint="#3b2a55">
+        <Head x={100} y={430} s={1.9} owl={1} turn={turn} />
+        <div style={{position: 'absolute', left: 60, top: 1180, fontFamily: DISPLAY, fontSize: 80, color: '#fff'}}>⬅ WHOLE HEAD</div>
+      </Room>
+    );
+  }
+  const w = 300 + morph * 40, h = 300 + morph * 140;
+  return (
+    <Room tint="#3b2a55">
+      <div style={{position: 'absolute', left: 0, right: 140, top: 330, textAlign: 'center', fontFamily: DISPLAY, fontSize: 60, color: '#fff'}}>{frame >= tAt ? 'NOT A BALL. A TUBE.' : 'YOUR EYE'}</div>
+      <svg width={1080} height={760} style={{position: 'absolute', left: 0, top: 430}}>
+        <g transform="translate(470 360)">
+          <path d={`M${-w / 2} ${-h / 2 + morph * 120} Q0 ${-h / 2 - 60} ${w / 2} ${-h / 2 + morph * 120} L${w / 2} ${h / 2 - morph * 120} Q0 ${h / 2 + 60} ${-w / 2} ${h / 2 - morph * 120} Z`} fill="#fffaf0" stroke={OL} strokeWidth={10} strokeLinejoin="round" />
+          <ellipse cx={w / 2 - 6} cy={0} rx={30} ry={120 - morph * 20} fill="#ffb000" stroke={OL} strokeWidth={7} />
+          <ellipse cx={w / 2} cy={0} rx={14} ry={60} fill={OL} />
+          {ring > 0 ? <>
+            <rect x={-w / 2 - 30} y={-h / 2 + 70} width={w + 60} height={40} rx={18} fill="#d6cbb4" stroke={OL} strokeWidth={6} opacity={ring} />
+            <rect x={-w / 2 - 30} y={h / 2 - 110} width={w + 60} height={40} rx={18} fill="#d6cbb4" stroke={OL} strokeWidth={6} opacity={ring} />
+          </> : null}
+        </g>
+      </svg>
+      <Tag text="🔒 RINGS OF BONE" a={lAt} y={1150} size={60} color="#ff6b6b" rot={2} />
+    </Room>
+  );
+};
+
+/* owlSecret: { tearOnWord, bonesOnWord, tunnelOnWord, poolOnWord } — your artery tears (red flash); then the owl's three tricks appear one by one. */
+const OwlSecret: React.FC<SceneProps> = ({scene, captions, durationInFrames: dur}) => {
+  const frame = useCurrentFrame();
+  const {fps} = useVideoConfig();
+  const tAt = at(captions, scene.tearOnWord, fps, 10);
+  const bAt = at(captions, scene.bonesOnWord, fps, dur * 0.3);
+  const uAt = at(captions, scene.tunnelOnWord, fps, dur * 0.55);
+  const pAt = at(captions, scene.poolOnWord, fps, dur * 0.75);
+  const items = [
+    {a: bAt, icon: '🦴', big: '14', text: 'NECK BONES (YOU: 7)'},
+    {a: uAt, icon: '🕳️', big: '10×', text: 'WIDER ARTERY TUNNELS'},
+    {a: pAt, icon: '🩸', big: 'POOLS', text: 'OF BLOOD FEED THE BRAIN'},
+  ];
+  if (frame < bAt - 2) {
+    const pinch = interpolate(frame, [tAt, tAt + 12], [0, 1], clamp);
+    return (
+      <Room tint="#3a2440">
+        <Tag text="YOUR NECK" a={0} y={330} size={66} color="#f2c79b" />
+        <svg width={300} height={640} style={{position: 'absolute', left: 390, top: 470}}>
+          {new Array(7).fill(0).map((_, i) => <rect key={i} x={70} y={20 + i * 86} width={160} height={66} rx={12} fill="#f2c79b" stroke={OL} strokeWidth={5} />)}
+          <path d={`M110 0 Q${110 + pinch * 45} 320 110 640`} stroke="#e11d48" strokeWidth={14} fill="none" />
+          <path d={`M190 0 Q${190 - pinch * 45} 320 190 640`} stroke="#e11d48" strokeWidth={14} fill="none" />
+          {pinch > 0.9 ? <text x={150} y={340} textAnchor="middle" fontSize={110}>💥</text> : null}
+        </svg>
+        {frame >= tAt ? <Tag text="ARTERY TEARS" a={tAt} y={1140} size={60} color="#ff6b6b" /> : null}
+      </Room>
+    );
+  }
+  return (
+    <Room tint="#24335e">
+      <Tag text="THE OWL'S NECK" a={bAt - 2} y={320} size={66} color="#c9a26b" />
+      {items.map((it, i) => {
+        if (frame < it.a) return null;
+        const s = spring({frame: frame - it.a, fps, config: {damping: 12}});
+        return (
+          <div key={i} style={{position: 'absolute', left: 80, width: 860, top: 470 + i * 230, height: 190, background: '#fff', border: `7px solid ${OL}`, borderRadius: 28, boxShadow: `0 10px 0 ${OL}`, display: 'flex', alignItems: 'center', gap: 26, paddingLeft: 30, scale: String(s)}}>
+            <span style={{fontSize: 100}}>{it.icon}</span>
+            <div>
+              <div style={{fontFamily: DISPLAY, fontSize: 84, color: '#e8963d', lineHeight: 1}}>{it.big}</div>
+              <div style={{fontFamily: BODY, fontWeight: 900, fontSize: 38, color: OL}}>{it.text}</div>
+            </div>
+          </div>
+        );
+      })}
+      <Syn x={830} y={1180} size={170} pose="shock" from={Math.round(pAt + 8)} to={9999} />
+    </Room>
+  );
+};
+
+/* eyesClose: { shutOnWord } — back in bed with owl eyes; they close on "closed," (loop into the hook). */
+const EyesClose: React.FC<SceneProps> = ({scene, captions, durationInFrames: dur}) => {
+  const frame = useCurrentFrame();
+  const {fps} = useVideoConfig();
+  const sAt = at(captions, scene.shutOnWord, fps, dur * 0.8);
+  const shut = interpolate(frame, [sAt, sAt + 8], [0, 1], clamp);
+  return (
+    <Room win>
+      <div style={{position: 'absolute', left: 40, right: 40, top: 1030, height: 230, background: '#e85d75', border: `10px solid ${OL}`, borderRadius: 40}} />
+      <div style={{position: 'absolute', left: 60, top: 980, width: 380, height: 120, background: '#fff', border: `8px solid ${OL}`, borderRadius: 60}} />
+      <Head x={140} y={500} s={1.15} owl={1} shut={shut} />
+      <Tag text="OWL EYES NEED AN OWL NECK" a={4} y={330} size={50} />
+      <DailyPill from={Math.round(dur * 0.3)} y={1150} />
+      <Syn x={790} y={760} size={200} pose="think" from={8} to={dur} />
+    </Room>
+  );
+};
+
+export const WHATIF4_SCENES: Record<string, React.FC<SceneProps>> = {owlWake: OwlWake, lockedEyes: LockedEyes, turnPick: TurnPick, turnReveal: TurnReveal, neckCost: NeckCost, lightCatch: LightCatch, tubeEye: TubeEye, owlSecret: OwlSecret, eyesClose: EyesClose};
