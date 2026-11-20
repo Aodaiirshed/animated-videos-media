@@ -50,6 +50,7 @@ import {HISTORY7_SCENES} from './history7';
 import {HISTORY8_SCENES} from './history8';
 import {QUIZ1_SCENES} from './quiz1';
 import {STORY20_SCENES} from './story20';
+import {STORY21_SCENES} from './story21';
 import {RULE3_SCENES} from './rule3';
 import {HISTORY1_SCENES} from './history1';
 import {HISTORY2_SCENES} from './history2';
@@ -462,6 +463,7 @@ export const SCENES: Record<string, React.FC<SceneProps>> = {
   ...HISTORY8_SCENES,
   ...QUIZ1_SCENES,
   ...STORY20_SCENES,
+  ...STORY21_SCENES,
   ...RULE3_SCENES,
   ...HISTORY1_SCENES,
   ...HISTORY2_SCENES,
