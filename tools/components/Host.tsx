@@ -8,8 +8,35 @@ import {BODY, DISPLAY} from '../fonts';
    Place in a corner (~260 px), never over frame-0 hook text, captions (y 1330–1500) or the right 140 px. */
 export type HostPose = 'wave' | 'point' | 'shock' | 'think';
 
-export const Syn: React.FC<{x: number; y: number; size?: number; pose?: HostPose; from?: number; to?: number; flip?: boolean}> = ({
-  x, y, size = 260, pose = 'wave', from = 0, to = 99999, flip,
+/* Lip sync (19–20 Nov): Rhubarb Lip Sync cues (Preston Blair set) → mouth shapes.
+   A closed (M/B/P) · B slightly open · C open (EH) · D wide open (AA) · E rounded (AO/ER) · F puckered (OO)
+   G teeth on lip (F/V) · H tongue up (L) · X rest = the old smile. Centred on (150, 226) in Syn's 300×300 box. */
+const DARK = '#141826';
+const SynMouth: React.FC<{shape: string}> = ({shape}) => {
+  switch (shape) {
+    case 'A': return <path d="M134 226 q16 3 32 0" stroke={DARK} strokeWidth={6} fill="none" strokeLinecap="round" />;
+    case 'B': return <g><ellipse cx="150" cy="226" rx="16" ry="6" fill={DARK} /><path d="M137 223 h26" stroke="#fff" strokeWidth={3} strokeLinecap="round" /></g>;
+    case 'C': return <g><ellipse cx="150" cy="228" rx="16" ry="11" fill={DARK} /><ellipse cx="150" cy="234" rx="9" ry="4" fill="#ff7a8c" /></g>;
+    case 'D': return <g><ellipse cx="150" cy="230" rx="19" ry="16" fill={DARK} /><ellipse cx="150" cy="239" rx="11" ry="6" fill="#ff7a8c" /><path d="M136 220 h28" stroke="#fff" strokeWidth={4} strokeLinecap="round" /></g>;
+    case 'E': return <ellipse cx="150" cy="229" rx="12" ry="13" fill={DARK} />;
+    case 'F': return <g><ellipse cx="150" cy="228" rx="8" ry="9" fill={DARK} /><ellipse cx="150" cy="228" rx="11" ry="12" fill="none" stroke="#1f7f78" strokeWidth={3} /></g>;
+    case 'G': return <g><path d="M134 222 h32 v8 q-16 8 -32 0 z" fill={DARK} /><rect x="138" y="221" width="24" height="5" rx="2" fill="#fff" /></g>;
+    case 'H': return <g><ellipse cx="150" cy="228" rx="16" ry="12" fill={DARK} /><ellipse cx="150" cy="222" rx="8" ry="4" fill="#ff7a8c" /></g>;
+    default: return <path d="M132 222 q18 16 36 0" stroke={DARK} strokeWidth={6} fill="none" strokeLinecap="round" />;
+  }
+};
+
+/* Current Rhubarb shape for this scene at the current frame (cues are in seconds from the scene's audio start). */
+export type MouthCue = {start: number; end: number; value: string};
+export const mouthAt = (cues: MouthCue[] | undefined, frame: number, fps: number): string => {
+  if (!cues) return 'X';
+  const t = frame / fps;
+  const c = cues.find((q) => t >= q.start && t < q.end);
+  return c ? c.value : 'X';
+};
+
+export const Syn: React.FC<{x: number; y: number; size?: number; pose?: HostPose; from?: number; to?: number; flip?: boolean; mouth?: string}> = ({
+  x, y, size = 260, pose = 'wave', from = 0, to = 99999, flip, mouth,
 }) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
@@ -53,7 +80,9 @@ export const Syn: React.FC<{x: number; y: number; size?: number; pose?: HostPose
         <circle cx="182" cy={182 + eyeY} r={pose === 'shock' ? 7 : 10} fill="#141826" />
         <circle cx="129" cy={178 + eyeY} r="3.5" fill="#fff" />
         <circle cx="185" cy={178 + eyeY} r="3.5" fill="#fff" />
-        {pose === 'shock'
+        {mouth && mouth !== 'X'
+          ? <SynMouth shape={mouth} />
+          : pose === 'shock'
           ? <ellipse cx="150" cy="228" rx="13" ry="16" fill="#141826" />
           : <path d={pose === 'think' ? 'M136 226 q14 -6 28 0' : 'M132 222 q18 16 36 0'} stroke="#141826" strokeWidth={6} fill="none" strokeLinecap="round" />}
         <circle cx="98" cy="210" r="9" fill="#ff8fa3" opacity=".7" />
