@@ -1,0 +1,292 @@
+{
+ "language": "en",
+ "loop": true,
+ "voice": {
+  "engine": "kokoro",
+  "voice": "brit",
+  "speed": 1.06
+ },
+ "palette": {
+  "bg": "#07070b",
+  "accent": "#ff4d2e",
+  "gold": "#ffcc4d",
+  "text": "#ffffff"
+ },
+ "mix": {
+  "music": 0.3,
+  "sfx": 0.4
+ },
+ "character": {
+  "id": "boy",
+  "hair": "short",
+  "style": "cartoon",
+  "description": "none",
+  "palette": {
+   "skin": "#8b5a2b",
+   "rim": "#ffcc4d",
+   "shirt": "#14141c"
+  }
+ },
+ "cta": "Every day, one true story that sounds fake",
+ "slug": "quiz2-reveal",
+ "type": "quiz",
+ "player": "Saka / Palmer / Bruno Fernandes",
+ "music": {
+  "file": "music_epic.wav",
+  "volume": 0.2
+ },
+ "hook": "Three Premier League stars, three clues each. Can you name them before the reveal?",
+ "sources": [
+  "https://en.wikipedia.org/wiki/Bukayo_Saka",
+  "https://www.arsenal.com/men/players/bukayo-saka",
+  "https://en.wikipedia.org/wiki/Cole_Palmer",
+  "https://www.premierleague.com/news/4133234",
+  "https://en.wikipedia.org/wiki/Bruno_Fernandes",
+  "https://www.manutd.com/en/players-and-staff/detail/bruno-fernandes",
+  "https://www.sportsmole.co.uk/football/man-utd/premier-league-team/feature/man-utd-liverpool-arsenal-represented-premier-league-team-of-the-week_608768.html"
+ ],
+ "ttsOverrides": {
+  "Saka.": "Sah-kah.",
+  "Bukayo": "Boo-kai-oh",
+  "2020,": "twenty twenty,"
+ },
+ "scenes": [
+  {
+   "id": "z1",
+   "visual": "quizHook",
+   "vo": "Three Premier League stars, three clues each. Can you name them before the reveal?",
+   "emphasis": [
+    "Premier",
+    "all",
+    "three"
+   ],
+   "sfx": [
+    {
+     "file": "whoosh.wav",
+     "volume": 0.5,
+     "at": 0.3
+    },
+    {
+     "file": "stamp.wav",
+     "volume": 0.8,
+     "onWord": "reveal?"
+    }
+   ],
+   "transition": "flash",
+   "captionTop": 1380,
+   "badge": "GUESS BEFORE THE REVEAL #2"
+  },
+  {
+   "id": "z2",
+   "visual": "quizPlayer",
+   "vo": "One. Joined his club's academy at seven. Missed a Euro final penalty at nineteen. Arsenal's number seven. Got him? Bukayo Saka.",
+   "emphasis": [
+    "seven.",
+    "penalty",
+    "Saka."
+   ],
+   "sfx": [
+    {
+     "file": "pop.wav",
+     "volume": 0.6,
+     "onWord": "Joined"
+    },
+    {
+     "file": "pop.wav",
+     "volume": 0.6,
+     "onWord": "Missed"
+    },
+    {
+     "file": "pop.wav",
+     "volume": 0.6,
+     "onWord": "Arsenal's"
+    },
+    {
+     "file": "tick.wav",
+     "volume": 0.6,
+     "onWord": "Got"
+    },
+    {
+     "file": "boom.wav",
+     "volume": 0.9,
+     "onWord": "Bukayo"
+    }
+   ],
+   "transition": "whipPan",
+   "captionTop": 1380,
+   "badge": "GUESS BEFORE THE REVEAL #2",
+   "num": 1,
+   "hair": "short",
+   "skin": "#5c3a24",
+   "shirt": "#dc2626",
+   "bg": "radial-gradient(circle at 50% 40%, #b91c1c 0%, #2a0707 80%)",
+   "clues": [
+    {
+     "text": "Joined his club's academy at 7",
+     "onWord": "Joined"
+    },
+    {
+     "text": "Missed a Euro final penalty at 19",
+     "onWord": "Missed"
+    },
+    {
+     "text": "Arsenal's number 7",
+     "onWord": "Arsenal's"
+    }
+   ],
+   "guessOnWord": "Got",
+   "nameOnWord": "Bukayo",
+   "name": "BUKAYO SAKA",
+   "holdAfter": 1.1,
+   "beard": false
+  },
+  {
+   "id": "z3",
+   "visual": "quizPlayer",
+   "vo": "Two. Won the treble, then left for more minutes. Four goals in one half against Brighton. The cold celebration. Cole Palmer.",
+   "emphasis": [
+    "treble,",
+    "Four",
+    "Palmer."
+   ],
+   "sfx": [
+    {
+     "file": "pop.wav",
+     "volume": 0.6,
+     "onWord": "Won"
+    },
+    {
+     "file": "pop.wav",
+     "volume": 0.6,
+     "onWord": "Four"
+    },
+    {
+     "file": "pop.wav",
+     "volume": 0.6,
+     "onWord": "cold"
+    },
+    {
+     "file": "tick.wav",
+     "volume": 0.6,
+     "onWord": "celebration."
+    },
+    {
+     "file": "boom.wav",
+     "volume": 0.9,
+     "onWord": "Cole"
+    }
+   ],
+   "transition": "whipPan",
+   "captionTop": 1380,
+   "badge": "GUESS BEFORE THE REVEAL #2",
+   "num": 2,
+   "hair": "short",
+   "skin": "#f1d2b0",
+   "shirt": "#1d4ed8",
+   "bg": "radial-gradient(circle at 50% 40%, #1d4ed8 0%, #0b1020 80%)",
+   "clues": [
+    {
+     "text": "Won the treble… then left",
+     "onWord": "Won"
+    },
+    {
+     "text": "4 goals in ONE half vs Brighton",
+     "onWord": "Four"
+    },
+    {
+     "text": "The 'cold' celebration 🥶",
+     "onWord": "cold"
+    }
+   ],
+   "guessOnWord": "celebration.",
+   "nameOnWord": "Cole",
+   "name": "COLE PALMER",
+   "holdAfter": 1.1,
+   "beard": false
+  },
+  {
+   "id": "z4",
+   "visual": "quizPlayer",
+   "vo": "Three. His senior career began in Italy. Joined in January 2020, now club captain. That little hop before penalties. Bruno Fernandes.",
+   "emphasis": [
+    "Italy.",
+    "captain.",
+    "Fernandes."
+   ],
+   "sfx": [
+    {
+     "file": "pop.wav",
+     "volume": 0.6,
+     "onWord": "senior"
+    },
+    {
+     "file": "pop.wav",
+     "volume": 0.6,
+     "onWord": "Joined"
+    },
+    {
+     "file": "pop.wav",
+     "volume": 0.6,
+     "onWord": "hop"
+    },
+    {
+     "file": "tick.wav",
+     "volume": 0.6,
+     "onWord": "penalties."
+    },
+    {
+     "file": "boom.wav",
+     "volume": 0.9,
+     "onWord": "Bruno"
+    }
+   ],
+   "transition": "flash",
+   "captionTop": 1380,
+   "badge": "GUESS BEFORE THE REVEAL #2",
+   "num": 3,
+   "hair": "short",
+   "beard": true,
+   "skin": "#e8c39e",
+   "shirt": "#991b1b",
+   "bg": "radial-gradient(circle at 50% 40%, #7f1d1d 0%, #1c0606 80%)",
+   "clues": [
+    {
+     "text": "Senior career began in Italy",
+     "onWord": "senior"
+    },
+    {
+     "text": "Joined Jan 2020 → club captain",
+     "onWord": "Joined"
+    },
+    {
+     "text": "The little hop before penalties",
+     "onWord": "hop"
+    }
+   ],
+   "guessOnWord": "penalties.",
+   "nameOnWord": "Bruno",
+   "name": "BRUNO FERNANDES",
+   "holdAfter": 1.1
+  },
+  {
+   "id": "z5",
+   "visual": "quizScore",
+   "vo": "How many did you get? Comment your score, and try again with",
+   "emphasis": [
+    "score,"
+   ],
+   "sfx": [
+    {
+     "file": "ding.wav",
+     "volume": 0.6,
+     "onWord": "Comment"
+    }
+   ],
+   "transition": "none",
+   "captionTop": 1380,
+   "badge": "GUESS BEFORE THE REVEAL #2",
+   "scoreOnWord": "Comment",
+   "holdAfter": 0
+  }
+ ]
+}

@@ -1,0 +1,239 @@
+{
+ "language": "ar",
+ "loop": true,
+ "palette": {
+  "bg": "#07070b",
+  "accent": "#ff4d2e",
+  "gold": "#ffcc4d",
+  "text": "#ffffff"
+ },
+ "mix": {
+  "music": 0.3,
+  "sfx": 0.4
+ },
+ "character": {
+  "id": "boy",
+  "hair": "short",
+  "style": "cartoon",
+  "description": "Original cartoon player (not a likeness).",
+  "palette": {
+   "skin": "#photo-hero",
+   "rim": "#ffcc4d",
+   "shirt": "#14141c"
+  },
+  "toon": {
+   "skin": "#7a4a2e",
+   "hair": "#1f1410",
+   "shirt": "#475569",
+   "shorts": "#111827",
+   "boots": "#111111",
+   "socks": "#475569"
+  }
+ },
+ "cta": "Comment your guess",
+ "slug": "will19-guess-ar",
+ "player": "(hidden)",
+ "voice": {
+  "engine": "kokoro",
+  "voice": "brit",
+  "speed": 1.0
+ },
+ "music": {
+  "file": "music_tension.wav",
+  "volume": 0.2
+ },
+ "hook": "في العشرين، كان لاعب شاب في المستشفى، وطلب منه الأطباء أن يوقّع ما يشبه الوصية.",
+ "sources": [
+  "https://en.wikipedia.org/wiki/Virgil_van_Dijk",
+  "https://www.lfchistory.net/articles/4460",
+  "https://www.lfchistory.net/articles/4183",
+  "https://www.dailysabah.com/sports/football/virgil-van-dijk-teenage-outcast-turned-dutch-behemoth",
+  "https://www.thisdaylive.com/2019/02/23/virgil-van-dijk-from-dishwashing-to-worlds-most-expensive-defender/",
+  "https://www.vi.nl/pro/de-groningse-jaren-van-virgil-van-dijk-van-testament-naar-toptransfer",
+  "https://www.fourfourtwo.com/features/making-virgil-van-dijk-how-liverpools-rock-became-worlds-best-defender"
+ ],
+ "scenes": [
+  {
+   "id": "w1",
+   "visual": "hospitalWill",
+   "vo": "في العشرين، كان لاعب شاب في المستشفى، وطلب منه الأطباء أن يوقّع ما يشبه الوصية.",
+   "emphasis": [
+    "الوصية."
+   ],
+   "sfx": [
+    {
+     "file": "heartbeat.wav",
+     "volume": 0.5,
+     "at": 0.3
+    },
+    {
+     "file": "stamp.wav",
+     "volume": 0.8,
+     "onWord": "الوصية."
+    }
+   ],
+   "transition": "flash",
+   "captionTop": 1380,
+   "badge": "GUESS THE PLAYER #19",
+   "willOnWord": "الوصية."
+  },
+  {
+   "id": "w2",
+   "visual": "dishSink",
+   "vo": "في مراهقته، كان يغسل الصحون في مطبخ مطعم، بلا عقد.",
+   "emphasis": [
+    "الصحون",
+    "عقد."
+   ],
+   "sfx": [
+    {
+     "file": "pop.wav",
+     "volume": 0.5,
+     "onWord": "عقد."
+    },
+    {
+     "file": "stamp.wav",
+     "volume": 0.7,
+     "onWord": "عقد."
+    }
+   ],
+   "transition": "whipPan",
+   "captionTop": 1380,
+   "badge": "GUESS THE PLAYER #19",
+   "contractOnWord": "عقد."
+  },
+  {
+   "id": "w3",
+   "visual": "tooLimited",
+   "vo": "قال عنه أحد المدرّبين: لديه قيود كثيرة. فرحل مجانًا.",
+   "emphasis": [
+    "قيود",
+    "مجانًا."
+   ],
+   "sfx": [
+    {
+     "file": "stamp.wav",
+     "volume": 0.9,
+     "onWord": "قيود"
+    },
+    {
+     "file": "whoosh.wav",
+     "volume": 0.5,
+     "onWord": "فرحل"
+    }
+   ],
+   "transition": "flash",
+   "captionTop": 1380,
+   "badge": "GUESS THE PLAYER #19",
+   "stampOnWord": "قيود",
+   "leftOnWord": "فرحل"
+  },
+  {
+   "id": "w4",
+   "visual": "pulledThrough",
+   "vo": "ثم جاء سرير المستشفى… التهاب خطير. لكنه نجا.",
+   "emphasis": [
+    "خطير.",
+    "نجا."
+   ],
+   "sfx": [
+    {
+     "file": "heartbeat.wav",
+     "volume": 0.6,
+     "onWord": "التهاب"
+    },
+    {
+     "file": "ding.wav",
+     "volume": 0.8,
+     "onWord": "نجا."
+    }
+   ],
+   "transition": "zoomBlur",
+   "captionTop": 1380,
+   "badge": "GUESS THE PLAYER #19",
+   "fearOnWord": "التهاب",
+   "okOnWord": "نجا."
+  },
+  {
+   "id": "w5",
+   "visual": "feeCounter",
+   "vo": "بكم بيع بعد سبع سنوات؟ خمسة وسبعون مليون جنيه، رقم قياسي لمدافع.",
+   "emphasis": [
+    "خمسة",
+    "قياسي"
+   ],
+   "sfx": [
+    {
+     "file": "riser.wav",
+     "volume": 0.4,
+     "onWord": "خمسة"
+    },
+    {
+     "file": "boom.wav",
+     "volume": 0.9,
+     "onWord": "قياسي"
+    },
+    {
+     "file": "stamp.wav",
+     "volume": 0.7,
+     "onWord": "قياسي"
+    }
+   ],
+   "transition": "flash",
+   "captionTop": 1380,
+   "badge": "GUESS THE PLAYER #19",
+   "feeOnWord": "خمسة",
+   "recordOnWord": "قياسي"
+  },
+  {
+   "id": "w6",
+   "visual": "trophyRunner",
+   "vo": "فاز بدوري الأبطال، وحلّ ثانيًا في الكرة الذهبية بعد ميسي.",
+   "emphasis": [
+    "الأبطال،",
+    "ثانيًا"
+   ],
+   "sfx": [
+    {
+     "file": "crowd.wav",
+     "volume": 0.5,
+     "onWord": "فاز"
+    },
+    {
+     "file": "ding.wav",
+     "volume": 0.7,
+     "onWord": "ثانيًا"
+    }
+   ],
+   "transition": "flash",
+   "captionTop": 1380,
+   "badge": "GUESS THE PLAYER #19",
+   "cupOnWord": "فاز",
+   "ballonOnWord": "ثانيًا"
+  },
+  {
+   "id": "w7",
+   "visual": "guessCard",
+   "vo": "من هو؟ اكتب تخمينك. الجواب غدًا.",
+   "emphasis": [
+    "هو؟"
+   ],
+   "sfx": [
+    {
+     "file": "ding.wav",
+     "volume": 0.7,
+     "onWord": "من"
+    }
+   ],
+   "transition": "none",
+   "captionTop": 1380,
+   "badge": "GUESS THE PLAYER #19",
+   "question": "من هو؟",
+   "cta": "اكتب تخمينك 👇",
+   "onWord": "من",
+   "pattern": "repeating-linear-gradient(0deg, #ae1c28 0 110px, #f8fafc 110px 220px, #21468b 220px 330px)",
+   "patternSize": "330px 330px",
+   "holdAfter": 0
+  }
+ ]
+}
