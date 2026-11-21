@@ -1,0 +1,114 @@
+{
+ "px_drift-phonk-instrumental.mp3": {
+  "mood": "hype",
+  "source": "https://pixabay.com/music/sub_clair-drift-phonk-instrumental-633169/",
+  "file_from_user": "sub_clair-drift-phonk-instrumental-633169.mp3",
+  "start_trim_s": 0.0,
+  "license": "Pixabay Content License (free commercial use, no attribution)"
+ },
+ "px_phonk-hard-instrumental.mp3": {
+  "mood": "hype",
+  "source": "https://pixabay.com/music/sub_clair-phonk-hard-instrumental-630140/",
+  "file_from_user": "sub_clair-phonk-hard-instrumental-630140.mp3",
+  "start_trim_s": 11.25,
+  "license": "Pixabay Content License (free commercial use, no attribution)"
+ },
+ "px_run-phonk-energy.mp3": {
+  "mood": "hype",
+  "source": "https://pixabay.com/music/mickeyscat-run-phonk-energy-no-copyright-637997/",
+  "file_from_user": "mickeyscat-run-phonk-energy-no-copyright-637997.mp3",
+  "start_trim_s": 0.5,
+  "license": "Pixabay Content License (free commercial use, no attribution)"
+ },
+ "px_epic-sport-trap.mp3": {
+  "mood": "hype",
+  "source": "https://pixabay.com/music/audioera-epic-sport-trap-637711/",
+  "file_from_user": "audioera-epic-sport-trap-637711.mp3",
+  "start_trim_s": 0.0,
+  "license": "Pixabay Content License (free commercial use, no attribution)"
+ },
+ "px_inspiration-piano-music.mp3": {
+  "mood": "emotional",
+  "source": "https://pixabay.com/music/audioera-inspiration-piano-music-637701/",
+  "file_from_user": "audioera-inspiration-piano-music-637701.mp3",
+  "start_trim_s": 0.0,
+  "license": "Pixabay Content License (free commercial use, no attribution)"
+ },
+ "px_piano.mp3": {
+  "mood": "emotional",
+  "source": "https://pixabay.com/music/leberch-piano-628075/",
+  "file_from_user": "leberch-piano-628075.mp3",
+  "start_trim_s": 0.5,
+  "license": "Pixabay Content License (free commercial use, no attribution)"
+ },
+ "px_violin.mp3": {
+  "mood": "emotional",
+  "source": "https://pixabay.com/music/nastelbom-violin-299793/",
+  "file_from_user": "nastelbom-violin-299793.mp3",
+  "start_trim_s": 0.0,
+  "license": "Pixabay Content License (free commercial use, no attribution)"
+ },
+ "px_cvilni-violin-1.mp3": {
+  "mood": "emotional",
+  "source": "https://pixabay.com/music/adiiswanto-cvilni-violin-1-302858/",
+  "file_from_user": "adiiswanto-cvilni-violin-1-302858.mp3",
+  "start_trim_s": 0.0,
+  "license": "Pixabay Content License (free commercial use, no attribution)"
+ },
+ "px_the-epic-dramatic-movie-score-short.mp3": {
+  "mood": "dark_history",
+  "source": "https://pixabay.com/music/alex_besss-the-epic-dramatic-movie-score-short-636358/",
+  "file_from_user": "alex_besss-the-epic-dramatic-movie-score-short-636358.mp3",
+  "start_trim_s": 1.0,
+  "license": "Pixabay Content License (free commercial use, no attribution)"
+ },
+ "px_history-documentary.mp3": {
+  "mood": "dark_history",
+  "source": "https://pixabay.com/music/the_mountain-history-documentary-167616/",
+  "file_from_user": "the_mountain-history-documentary-167616.mp3",
+  "start_trim_s": 1.75,
+  "license": "Pixabay Content License (free commercial use, no attribution)"
+ },
+ "px_the-egypt.mp3": {
+  "mood": "dark_history",
+  "source": "https://pixabay.com/music/echobrainz-the-egypt-637064/",
+  "file_from_user": "echobrainz-the-egypt-637064.mp3",
+  "start_trim_s": 0.0,
+  "license": "Pixabay Content License (free commercial use, no attribution)"
+ },
+ "px_dark-mystery.mp3": {
+  "mood": "suspense",
+  "source": "https://pixabay.com/music/echobrainz-dark-mystery-637056/",
+  "file_from_user": "echobrainz-dark-mystery-637056.mp3",
+  "start_trim_s": 0.0,
+  "license": "Pixabay Content License (free commercial use, no attribution)"
+ },
+ "px_suspense-cinematic.mp3": {
+  "mood": "suspense",
+  "source": "https://pixabay.com/music/sub_clair-suspense-cinematic-633037/",
+  "file_from_user": "sub_clair-suspense-cinematic-633037.mp3",
+  "start_trim_s": 2.5,
+  "license": "Pixabay Content License (free commercial use, no attribution)"
+ },
+ "px_suspense-short.mp3": {
+  "mood": "suspense",
+  "source": "https://pixabay.com/music/alex_besss-suspense-short-636375/",
+  "file_from_user": "alex_besss-suspense-short-636375.mp3",
+  "start_trim_s": 2.0,
+  "license": "Pixabay Content License (free commercial use, no attribution)"
+ },
+ "px_unsolved-story-documentary-music.mp3": {
+  "mood": "suspense",
+  "source": "https://pixabay.com/music/diamond_tunes-unsolved-story-documentary-music-187555/",
+  "file_from_user": "diamond_tunes-unsolved-story-documentary-music-187555.mp3",
+  "start_trim_s": 2.25,
+  "license": "Pixabay Content License (free commercial use, no attribution)"
+ },
+ "px_ambient-electronic-background-explainer.mp3": {
+  "mood": "explainer",
+  "source": "https://pixabay.com/music/musinova-ambient-electronic-background-explainer-364260/",
+  "file_from_user": "musinova-ambient-electronic-background-explainer-364260.mp3",
+  "start_trim_s": 3.0,
+  "license": "Pixabay Content License (free commercial use, no attribution)"
+ }
+}
