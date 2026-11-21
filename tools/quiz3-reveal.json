@@ -1,0 +1,260 @@
+{
+ "language": "en",
+ "loop": true,
+ "voice": {
+  "engine": "kokoro",
+  "voice": "brit",
+  "speed": 1.06
+ },
+ "palette": {
+  "bg": "#07070b",
+  "accent": "#ff4d2e",
+  "gold": "#ffcc4d",
+  "text": "#ffffff"
+ },
+ "character": {
+  "id": "boy",
+  "hair": "short",
+  "style": "cartoon",
+  "description": "none",
+  "palette": {
+   "skin": "#8b5a2b",
+   "rim": "#ffcc4d",
+   "shirt": "#14141c"
+  }
+ },
+ "cta": "Every day, one true story that sounds fake",
+ "slug": "quiz3-reveal",
+ "type": "quiz",
+ "player": "Declan Rice / Virgil van Dijk / Phil Foden",
+ "music": {
+  "file": "px_epic-sport-trap.mp3",
+  "gainDb": -4
+ },
+ "hook": "One was released by Chelsea at fourteen. Three stars, three clues. Get all three?",
+ "sources": [
+  "https://en.wikipedia.org/wiki/Declan_Rice",
+  "https://www.espn.com/soccer/player/_/id/238262 (Arsenal, 2026-27)",
+  "https://www.uefa.com/uefachampionsleague/news/ (Rice's two free kicks v Real Madrid, 8 Apr 2025)",
+  "https://en.wikipedia.org/wiki/Virgil_van_Dijk",
+  "https://www.liverpoolfc.com/teams/mens-team/virgil-van-dijk (captain, 2026-27)",
+  "https://en.wikipedia.org/wiki/Phil_Foden",
+  "https://www.footballwebpages.co.uk/manchester-city/appearances/phil-foden/430295 (City, 2026-27)",
+  "https://www.footballwebpages.co.uk/premier-league/20261121 (this weekend's fixtures)"
+ ],
+ "ttsOverrides": {
+  "Dijk.": "Dyke.",
+  "2018.": "twenty eighteen.",
+  "2024.": "twenty twenty-four.",
+  "Under-17": "Under seventeen"
+ },
+ "scenes": [
+  {
+   "id": "z1",
+   "visual": "quizHook",
+   "vo": "One was released by Chelsea at fourteen. Three stars, three clues. Get all three?",
+   "emphasis": [
+    "fourteen.",
+    "three?"
+   ],
+   "sfx": [
+    {
+     "file": "whoosh.wav",
+     "volume": 0.5,
+     "at": 0.05
+    },
+    {
+     "file": "stamp.wav",
+     "volume": 0.7,
+     "onWord": "fourteen."
+    }
+   ],
+   "transition": "flash",
+   "captionTop": 1380,
+   "badge": "GUESS BEFORE THE REVEAL #3",
+   "tag": "THIS WEEKEND'S PL STARS · 3 CLUES"
+  },
+  {
+   "id": "z2",
+   "visual": "quizPlayer",
+   "vo": "One. Chelsea let him go at fourteen. Played for Ireland, then England. Two free kicks against Real Madrid in one night. Got him? Declan Rice.",
+   "emphasis": [
+    "fourteen.",
+    "Ireland,",
+    "Rice."
+   ],
+   "sfx": [
+    {
+     "file": "pop.wav",
+     "volume": 0.6,
+     "onWord": "Chelsea"
+    },
+    {
+     "file": "tick.wav",
+     "volume": 0.6,
+     "onWord": "Got"
+    },
+    {
+     "file": "boom.wav",
+     "volume": 0.9,
+     "onWord": "Declan"
+    }
+   ],
+   "transition": "whipPan",
+   "captionTop": 1380,
+   "badge": "GUESS BEFORE THE REVEAL #3",
+   "num": 1,
+   "hair": "short",
+   "skin": "#f1d2b0",
+   "shirt": "#dc2626",
+   "bg": "radial-gradient(circle at 50% 40%, #b91c1c 0%, #2a0707 80%)",
+   "clues": [
+    {
+     "text": "Released by Chelsea at 14",
+     "onWord": "Chelsea"
+    },
+    {
+     "text": "Played for Ireland → switched to England",
+     "onWord": "Played"
+    },
+    {
+     "text": "2 free kicks vs Real Madrid in ONE night",
+     "onWord": "Two"
+    }
+   ],
+   "guessOnWord": "Got",
+   "nameOnWord": "Declan",
+   "name": "DECLAN RICE",
+   "holdAfter": 0.9,
+   "beard": false
+  },
+  {
+   "id": "z3",
+   "visual": "quizPlayer",
+   "vo": "Two. Washed dishes as a teenager. The world's most expensive defender in 2018. Liverpool's Dutch captain. Virgil van Dijk.",
+   "emphasis": [
+    "dishes",
+    "2018.",
+    "Dijk."
+   ],
+   "sfx": [
+    {
+     "file": "pop.wav",
+     "volume": 0.6,
+     "onWord": "Washed"
+    },
+    {
+     "file": "tick.wav",
+     "volume": 0.6,
+     "onWord": "captain."
+    },
+    {
+     "file": "boom.wav",
+     "volume": 0.9,
+     "onWord": "Virgil"
+    }
+   ],
+   "transition": "whipPan",
+   "captionTop": 1380,
+   "badge": "GUESS BEFORE THE REVEAL #3",
+   "num": 2,
+   "hair": "buzz",
+   "skin": "#5c3a24",
+   "shirt": "#991b1b",
+   "bg": "radial-gradient(circle at 50% 40%, #991b1b 0%, #1c0606 80%)",
+   "clues": [
+    {
+     "text": "Washed dishes as a teenager",
+     "onWord": "Washed"
+    },
+    {
+     "text": "World's most expensive defender, 2018",
+     "onWord": "world's"
+    },
+    {
+     "text": "Liverpool's Dutch captain",
+     "onWord": "Liverpool's"
+    }
+   ],
+   "guessOnWord": "captain.",
+   "nameOnWord": "Virgil",
+   "name": "VIRGIL VAN DIJK",
+   "holdAfter": 0.9,
+   "beard": true
+  },
+  {
+   "id": "z4",
+   "visual": "quizPlayer",
+   "vo": "Three. Golden Ball at the Under-17 World Cup. Footballer of the Year, 2024. The Stockport Iniesta. Phil Foden.",
+   "emphasis": [
+    "Golden",
+    "2024.",
+    "Foden."
+   ],
+   "sfx": [
+    {
+     "file": "pop.wav",
+     "volume": 0.6,
+     "onWord": "Golden"
+    },
+    {
+     "file": "tick.wav",
+     "volume": 0.6,
+     "onWord": "Iniesta."
+    },
+    {
+     "file": "boom.wav",
+     "volume": 0.9,
+     "onWord": "Phil"
+    }
+   ],
+   "transition": "flash",
+   "captionTop": 1380,
+   "badge": "GUESS BEFORE THE REVEAL #3",
+   "num": 3,
+   "hair": "short",
+   "beard": false,
+   "skin": "#f1d2b0",
+   "shirt": "#38bdf8",
+   "bg": "radial-gradient(circle at 50% 40%, #0284c7 0%, #06131f 80%)",
+   "clues": [
+    {
+     "text": "Golden Ball at the U-17 World Cup",
+     "onWord": "Golden"
+    },
+    {
+     "text": "Footballer of the Year, 2024",
+     "onWord": "Footballer"
+    },
+    {
+     "text": "'The Stockport Iniesta'",
+     "onWord": "Stockport"
+    }
+   ],
+   "guessOnWord": "Iniesta.",
+   "nameOnWord": "Phil",
+   "name": "PHIL FODEN",
+   "holdAfter": 0.9
+  },
+  {
+   "id": "z5",
+   "visual": "quizScore",
+   "vo": "How many did you get? Comment your score, and try again with",
+   "emphasis": [
+    "score,"
+   ],
+   "sfx": [
+    {
+     "file": "ding.wav",
+     "volume": 0.6,
+     "onWord": "Comment"
+    }
+   ],
+   "transition": "none",
+   "captionTop": 1380,
+   "badge": "GUESS BEFORE THE REVEAL #3",
+   "scoreOnWord": "Comment",
+   "holdAfter": 0
+  }
+ ]
+}
