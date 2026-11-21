@@ -73,8 +73,8 @@ const mixOf = (sb: Storyboard) => ({music: MUSIC_GAIN, sfx: SFX_GAIN, ...((sb as
    While a word is being spoken the bed sits DUCK_DB below the voice; in pauses of ~0.5 s+ it swells to
    SWELL_DB, and it is back down 4 frames BEFORE the next word starts. Storyboards can trim the bed with
    "music": {"gainDb": -2} (never above 0). Legacy fixed-volume mixing only with "mix": {"legacy": true}. */
-const DUCK_DB = -19;
-const SWELL_DB = -11;
+const DUCK_DB = -17;
+const SWELL_DB = -8;
 const SFX_DUCK_DB = -20;
 const CLUE_EXTRA_DB = -3;
 const dbToGain = (db: number) => Math.pow(10, db / 20);

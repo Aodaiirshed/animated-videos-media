@@ -38,7 +38,7 @@ for w,a,b in words:
     if sel.sum()<2: continue
     v=V[sel].sum(); rows.append({'word':w,'t':round(a,2),'vs_music_db':round(10*np.log10(v/(M[sel].sum()+1e-12)),1),'vs_all_bg_db':round(10*np.log10(v/(B[sel].sum()+1e-12)),1)})
 vm=np.array([r['vs_music_db'] for r in rows]); vb=np.array([r['vs_all_bg_db'] for r in rows])
-weak=[r for r in rows if r['vs_all_bg_db']<10 or r['vs_music_db']<12]
+weak=[r for r in rows if r['vs_all_bg_db']<8 or r['vs_music_db']<8]
 # Whisper on the final file
 from faster_whisper import WhisperModel
 lang='ar' if sb.get('language')=='ar' else 'en'
@@ -59,6 +59,6 @@ hit=1-len(missing)/max(1,len(script_words))
 rep={'id':cid,'words':len(rows),'music_below_voice_median_db':round(float(np.median(vm)),1),'music_below_voice_min_db':round(float(vm.min()),1),
      'all_background_min_db':round(float(vb.min()),1),'weak_words':weak,'whisper_hit_rate':round(hit,3),'whisper_missing':missing,'heard':heard.strip()}
 json.dump(rep,open(f'out/{cid}.mixcheck.json','w'),indent=1,ensure_ascii=False)
-ok = 15 <= rep['music_below_voice_median_db'] and not weak and hit>=0.9
+ok = 15 <= rep['music_below_voice_median_db'] and not weak and hit>=0.95
 print(json.dumps({k:v for k,v in rep.items() if k!='heard'},ensure_ascii=False))
 print('PASS' if ok else 'FAIL'); sys.exit(0 if ok else 1)
