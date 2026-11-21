@@ -10,6 +10,8 @@ for attempt in range(5):
     run('npx','remotion','render','src/index.ts',cid,f'out/{cid}-raw.mp4','--browser-executable=/usr/bin/google-chrome','--log=error')
     run('ffmpeg','-y','-loglevel','error','-i',f'out/{cid}-raw.mp4','-c:v','copy','-af','loudnorm=I=-14:TP=-1.5:LRA=11,alimiter=limit=0.84:level=false','-c:a','aac','-b:a','192k',f'out/{cid}.mp4')
     ok=subprocess.run(['python3','scripts/mix_check.py',cid,f'out/{cid}-raw.mp4',f'out/{cid}.mp4']).returncode==0
+    if subprocess.run(['python3','scripts/mirror_check.py',f'out/{cid}.mp4']).returncode!=0:
+        print('MIRRORED TEXT: fix the scene (no rotateY/scaleX(-1) on text layers) and render again'); sys.exit(2)
     print(f'attempt {attempt+1}: music gainDb {g} ->', 'PASS' if ok else 'FAIL')
     if ok or not sb.get('music') or g<=-8: sys.exit(0 if ok else 1)
     sb['music']['gainDb']=g-2; json.dump(sb,open(p,'w'),indent=1,ensure_ascii=False)

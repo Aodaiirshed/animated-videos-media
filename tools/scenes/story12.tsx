@@ -175,7 +175,8 @@ const OverheadKick: React.FC<SceneProps> = ({sb, scene, captions, durationInFram
   );
 };
 
-/* answerHook: { title, sub? } — ANSWER VIDEO HOOK: a giant "?" card flips to the title "YESTERDAY'S MYSTERY" with a ticket-like sub line. */
+/* answerHook: { title, sub? } — ANSWER VIDEO HOOK: the answer card is readable from frame 0 (it is the Instagram cover) and settles with a small wobble.
+   21 Nov: the old 180° flip showed MIRRORED text on frames 0–8, which became the cover. Never rotateY text past ±60° without backfaceVisibility: hidden. */
 const AnswerHook: React.FC<SceneProps> = ({scene, durationInFrames: dur}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
@@ -188,7 +189,7 @@ const AnswerHook: React.FC<SceneProps> = ({scene, durationInFrames: dur}) => {
         const a = (i / 18) * Math.PI * 2 + frame / 50;
         return <div key={i} style={{position: 'absolute', left: 540 + Math.cos(a) * 520 - 30, top: 900 + Math.sin(a) * 620 - 40, fontFamily: DISPLAY, fontSize: 80, color: '#fbbf24', opacity: 0.25}}>?</div>;
       })}
-      <div style={{position: 'absolute', left: 140, top: 520, width: 800, height: 760, transform: `perspective(1600px) rotateY(${(1 - flip) * 180}deg) rotate(${wob}deg)`, background: '#fef3c7', border: `14px solid ${OL}`, borderRadius: 40, boxShadow: `0 20px 0 ${OL}`, textAlign: 'center'}}>
+      <div style={{position: 'absolute', left: 140, top: 520, width: 800, height: 760, transform: `perspective(1600px) rotateY(${Math.sin(frame / 5) * 14 * (1 - flip)}deg) scale(${1.08 - 0.08 * flip}) rotate(${wob}deg)`, backfaceVisibility: 'hidden', background: '#fef3c7', border: `14px solid ${OL}`, borderRadius: 40, boxShadow: `0 20px 0 ${OL}`, textAlign: 'center'}}>
         <div style={{fontFamily: DISPLAY, fontSize: 120, color: '#b45309', marginTop: 120, lineHeight: 1}}>{(scene.title as string) ?? "YESTERDAY'S"}</div>
         <div style={{fontFamily: DISPLAY, fontSize: 150, color: OL, lineHeight: 1.05}}>{(scene.title2 as string) ?? 'MYSTERY'}</div>
         <div style={{fontFamily: BODY, fontWeight: 800, fontSize: 46, color: '#7c2d12', marginTop: 40}}>{(scene.sub as string) ?? 'THE ANSWER'}</div>

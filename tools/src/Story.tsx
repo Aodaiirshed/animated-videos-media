@@ -76,27 +76,30 @@ const mixOf = (sb: Storyboard) => ({music: MUSIC_GAIN, sfx: SFX_GAIN, ...((sb as
 const DUCK_DB = -19;
 const SWELL_DB = -11;
 const SFX_DUCK_DB = -20;
+const CLUE_EXTRA_DB = -3;
 const dbToGain = (db: number) => Math.pow(10, db / 20);
 const stemOf = () => (getInputProps() as {stem?: string}).stem ?? 'mix';
 
 export const speechSpans = (sb: Storyboard, timing: Timing, fps: number) => {
   const frames = sceneFrames(timing, sb, fps);
-  const spans: [number, number][] = [];
+  const spans: [number, number, number][] = [];
   let start = 0;
   timing.scenes.forEach((t, i) => {
-    for (const c of t.captions) spans.push([start + (c.startMs / 1000) * fps, start + (c.endMs / 1000) * fps]);
+    // "clue": true on a scene ducks the music a further CLUE_EXTRA_DB under its words (user, 21 Nov)
+    const extra = (sb.scenes[i] as {clue?: boolean}).clue ? CLUE_EXTRA_DB : 0;
+    for (const c of t.captions) spans.push([start + (c.startMs / 1000) * fps, start + (c.endMs / 1000) * fps, extra]);
     start += frames[i];
   });
   return spans;
 };
 
-const duckEnvelope = (spans: [number, number][], gainDb: number) => {
+const duckEnvelope = (spans: [number, number, number][], gainDb: number) => {
   const duck = dbToGain(DUCK_DB + Math.min(0, gainDb));
   const swell = dbToGain(SWELL_DB + Math.min(0, gainDb));
   return (f: number) => {
     let d = Infinity;
-    for (const [a, b] of spans) {
-      if (f >= a - 4 && f <= b + 3) return duck;
+    for (const [a, b, extra] of spans) {
+      if (f >= a - 4 && f <= b + 3) return duck * dbToGain(extra);
       d = Math.min(d, f < a ? a - 4 - f : f - b - 3);
     }
     const k = Math.min(1, Math.max(0, (d - 2) / 10));
