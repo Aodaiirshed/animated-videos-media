@@ -19,5 +19,16 @@ for sc, t in zip(sb['scenes'], tm['scenes']):
         if merged and s-merged[-1][1]<0.25: merged[-1][1]=e2
         else: merged.append([s,e2])
     t['voiced']=[[round(s,3),round(e2,3)] for s,e2 in merged if e2-s>0.06]
+    # Kokoro word times are estimates: a word whose start lands in a real pause is snapped to the next voiced span,
+    # so captions, onWord cues and the per-word mix check all line up with the actual speech.
+    v=t['voiced']
+    for c in t.get('captions',[]):
+        st=c['startMs']/1000
+        if any(a<=st<=b-0.12 for a,b in v): continue
+        nxt=[a for a,b in v if a>st]
+        if nxt and nxt[0]-st<0.8:
+            c['startMs']=int(nxt[0]*1000)
+            c['endMs']=max(c['endMs'],c['startMs']+80)
+            if c.get('timestampMs') is not None: c['timestampMs']=c['startMs']
 json.dump(tm,open(tp,'w'),indent=1,ensure_ascii=False)
 print(slug, [len(t['voiced']) for t in tm['scenes']])

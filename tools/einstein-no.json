@@ -1,0 +1,183 @@
+{
+ "slug": "einstein-no",
+ "player": "Albert Einstein",
+ "language": "en",
+ "type": "explainer",
+ "loop": true,
+ "voice": {
+  "engine": "kokoro",
+  "voice": "mix",
+  "speed": 1.03
+ },
+ "palette": {
+  "bg": "#07070b",
+  "accent": "#ff4d2e",
+  "gold": "#ffcc4d",
+  "text": "#ffffff"
+ },
+ "music": {
+  "file": "px_history-documentary.mp3",
+  "gainDb": -4
+ },
+ "character": {
+  "id": "boy",
+  "hair": "short",
+  "style": "cartoon",
+  "description": "none",
+  "palette": {
+   "skin": "#f2c9a0",
+   "rim": "#ffcc4d",
+   "shirt": "#14141c"
+  }
+ },
+ "cta": "Every day, one true story that sounds fake",
+ "hook": "1952. A country writes to one man, and offers him the job of president. He says no.",
+ "sources": [
+  "https://www.jewishvirtuallibrary.org/offering-the-presidency-of-israel-to-albert-einstein (Eban's letter of 17 Nov 1952 + Einstein's reply)",
+  "https://www.snopes.com/articles/465466/einstein-israeli-presidency/ (Weizmann died 9 Nov 1952; offer on behalf of Ben-Gurion; the 'natural aptitude and experience' line)",
+  "https://time.com/archive/6619783/israel-einstein-declines (Einstein was 73)",
+  "https://www.history.com/articles/albert-einstein-presidency-israel",
+  "https://en.wikipedia.org/wiki/Annus_mirabilis_papers (1905 papers while working at the Bern patent office, age 26)"
+ ],
+ "factLabels": {
+  "verified": [
+   "Weizmann, Israel's first president, died 9 Nov 1952; Eban's letter offering the presidency was dated 17 Nov 1952 (Jewish Virtual Library, Snopes)",
+   "Einstein declined; he wrote he lacked the natural aptitude and experience to deal properly with people (JVL, Snopes, Britannica)",
+   "he was 73 (TIME)",
+   "1905: worked at the patent office in Bern; published his miracle-year papers including E=mc²; born March 1879 → 26 (Wikipedia, standard biographies)"
+  ],
+  "qualified": [
+   "on-screen reply text is a paraphrase, labelled as such"
+  ]
+ },
+ "scenes": [
+  {
+   "id": "e1",
+   "visual": "letterHook",
+   "vo": "1952. A country writes to one man, and offers him the job of president. He says no.",
+   "emphasis": [
+    "president.",
+    "no."
+   ],
+   "transition": "none",
+   "captionTop": 1380,
+   "sfx": [
+    {
+     "file": "whoosh.wav",
+     "volume": 0.4,
+     "at": 0.02
+    },
+    {
+     "file": "stamp.wav",
+     "volume": 0.5,
+     "at": 1.2
+    }
+   ]
+  },
+  {
+   "id": "e2",
+   "visual": "emptyChair",
+   "vo": "Israel's first president had just died. They wanted this man next, and he was not even a politician.",
+   "emphasis": [
+    "died.",
+    "politician."
+   ],
+   "transition": "none",
+   "captionTop": 1380,
+   "sfx": [
+    {
+     "file": "thud.wav",
+     "volume": 0.4,
+     "onWord": "not"
+    }
+   ],
+   "notOnWord": "not"
+  },
+  {
+   "id": "e3",
+   "visual": "patentDesk",
+   "vo": "Decades earlier, he checked inventions in a patent office, and in his spare time, he rewrote physics. He was twenty-six.",
+   "emphasis": [
+    "patent",
+    "physics."
+   ],
+   "transition": "none",
+   "captionTop": 1380,
+   "clue": true,
+   "sfx": [
+    {
+     "file": "shimmer.wav",
+     "volume": 0.4,
+     "onWord": "rewrote"
+    }
+   ],
+   "physicsOnWord": "rewrote",
+   "ageOnWord": "twenty-six."
+  },
+  {
+   "id": "e4",
+   "visual": "fiveChars",
+   "vo": "His most famous idea fits into five characters. Mass and energy, two sides of the same thing.",
+   "emphasis": [
+    "five",
+    "energy,"
+   ],
+   "transition": "none",
+   "captionTop": 1380,
+   "clue": true,
+   "sfx": [
+    {
+     "file": "tick.wav",
+     "volume": 0.4,
+     "onWord": "five"
+    }
+   ],
+   "revealOnWord": "five"
+  },
+  {
+   "id": "e5",
+   "visual": "replyLetter",
+   "vo": "He was seventy-three. So why say no? He wrote back that he lacked the experience to deal properly with people.",
+   "emphasis": [
+    "seventy-three.",
+    "people."
+   ],
+   "transition": "none",
+   "captionTop": 1380,
+   "clue": true,
+   "sfx": [
+    {
+     "file": "brush.wav",
+     "volume": 0.4,
+     "onWord": "wrote"
+    }
+   ],
+   "ageOnWord": "seventy-three.",
+   "whyOnWord": "wrote"
+  },
+  {
+   "id": "e6",
+   "visual": "einsteinReveal",
+   "vo": "The man who turned down a country was Albert Einstein. And the year was",
+   "emphasis": [
+    "Albert",
+    "Einstein."
+   ],
+   "transition": "none",
+   "captionTop": 1380,
+   "holdAfter": 0,
+   "sfx": [
+    {
+     "file": "stamp.wav",
+     "volume": 0.5,
+     "onWord": "Albert"
+    }
+   ],
+   "nameOnWord": "Albert",
+   "sendOnWord": "And"
+  }
+ ],
+ "ttsOverrides": {
+  "1952.": "Nineteen fifty-two."
+ }
+}
