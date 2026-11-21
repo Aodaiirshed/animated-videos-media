@@ -38,7 +38,8 @@ for w,a,b in words:
     if sel.sum()<2: continue
     v=V[sel].sum(); rows.append({'word':w,'t':round(a,2),'vs_music_db':round(10*np.log10(v/(M[sel].sum()+1e-12)),1),'vs_all_bg_db':round(10*np.log10(v/(B[sel].sum()+1e-12)),1)})
 vm=np.array([r['vs_music_db'] for r in rows]); vb=np.array([r['vs_all_bg_db'] for r in rows])
-weak=[r for r in rows if r['vs_all_bg_db']<8 or r['vs_music_db']<8]
+STOP={'the','a','an','of','to','and','in','on','is','it','its','at','for','or','that','this'}
+weak=[r for r in rows if (r['vs_all_bg_db']<8 or r['vs_music_db']<8) and re.sub(r'[^a-z]','',r['word'].lower()) not in STOP]
 # Whisper on the final file
 from faster_whisper import WhisperModel
 lang='ar' if sb.get('language')=='ar' else 'en'
@@ -51,7 +52,7 @@ norm=lambda s: re.sub(r"[^\w\s]",' ',s.lower())
 from num2words import num2words
 def spell(tok):
     return norm(num2words(int(tok))).replace('-',' ').split() if tok.isdigit() else [tok]
-heard_set=set(w for tok in norm(heard.replace('£',' ').replace(',','')).split() for w in spell(tok))
+heard_set=set(w for tok in norm(heard.replace('£',' ').replace('%',' percent ').replace(',','')).split() for w in spell(tok))
 script_words=[w for sc in sb['scenes'] for w in norm(sc['vo'].replace('-',' ')).split()]
 # names/numbers are often spelt differently by Whisper; judge the ordinary words
 missing=[w for w in script_words if w not in heard_set and not w.isdigit()]

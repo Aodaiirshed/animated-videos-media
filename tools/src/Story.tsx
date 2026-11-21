@@ -87,7 +87,10 @@ export const speechSpans = (sb: Storyboard, timing: Timing, fps: number) => {
   timing.scenes.forEach((t, i) => {
     // "clue": true on a scene ducks the music a further CLUE_EXTRA_DB under its words (user, 21 Nov)
     const extra = (sb.scenes[i] as {clue?: boolean}).clue ? CLUE_EXTRA_DB : 0;
-    for (const c of t.captions) spans.push([start + (c.startMs / 1000) * fps, start + (c.endMs / 1000) * fps, extra]);
+    // Prefer the narrator's real voiced spans (scripts/vad.py); fall back to the estimated caption times
+    const voiced = (t as {voiced?: [number, number][]}).voiced;
+    if (voiced && voiced.length) for (const [a, b] of voiced) spans.push([start + a * fps, start + b * fps, extra]);
+    else for (const c of t.captions) spans.push([start + (c.startMs / 1000) * fps, start + (c.endMs / 1000) * fps, extra]);
     start += frames[i];
   });
   return spans;

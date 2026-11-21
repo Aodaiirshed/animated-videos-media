@@ -5,6 +5,7 @@ Renders out/<id>-raw.mp4 -> out/<id>.mp4, runs scripts/mix_check.py. On FAIL it 
 import json, subprocess, sys
 cid=sys.argv[1]; p=f'storyboards/{cid}.json'
 def run(*a): subprocess.run(list(a),check=True)
+run('python3','scripts/vad.py',cid)  # real voiced spans for the ducking
 for attempt in range(5):
     sb=json.load(open(p)); g=(sb.get('music') or {}).get('gainDb',0)
     run('npx','remotion','render','src/index.ts',cid,f'out/{cid}-raw.mp4','--browser-executable=/usr/bin/google-chrome','--log=error')

@@ -1,0 +1,157 @@
+{
+ "slug": "rule5-ikea",
+ "player": "IKEA effect (Norton, Mochon & Ariely 2012)",
+ "language": "en",
+ "type": "explainer",
+ "loop": true,
+ "voice": {
+  "engine": "kokoro",
+  "voice": "mix",
+  "speed": 1.0
+ },
+ "palette": {
+  "bg": "#07070b",
+  "accent": "#ff4d2e",
+  "gold": "#ffcc4d",
+  "text": "#ffffff"
+ },
+ "music": {
+  "file": "px_dark-mystery.mp3",
+  "gainDb": -2
+ },
+ "character": {
+  "id": "boy",
+  "hair": "short",
+  "style": "cartoon",
+  "description": "none",
+  "palette": {
+   "skin": "#bath-hero",
+   "rim": "#ffcc4d",
+   "shirt": "#14141c"
+  }
+ },
+ "cta": "Every day, one hidden rule of human behaviour",
+ "hook": "Yesterday, I gave one sheep a box of chair parts. Now he says his wobbly chair is priceless.",
+ "sources": [
+  "Norton, Mochon & Ariely (2012), The IKEA effect: When labor leads to love. Journal of Consumer Psychology 22(3): 453–460 (HBS DASH copy: https://dash.harvard.edu/bitstream/handle/1/12136084/norton%20mochon%20ariely%20third%20round[1].pdf) — builders of a plain IKEA storage box bid more than people given one pre-assembled; the effect dissipated when people built then destroyed their creations, or failed to complete them",
+  "https://en.wikipedia.org/wiki/IKEA_effect — subjects were willing to pay 63% more for furniture they had assembled themselves than for equivalent pre-assembled items",
+  "Mochon, Norton & Ariely (2012), International Journal of Research in Marketing 29(4): 363–369 — participants paid significantly more for an IKEA storage box they built than for an identical one built by someone else"
+ ],
+ "factCheck": "63% = Wikipedia summary of Norton et al. study 1 (IKEA box, willingness to pay); 'didn't finish or took it apart → extra value vanished' = paper abstract (built then destroyed, or failed to complete → effect dissipated). Cooking line is an everyday example, not a study claim.",
+ "scenes": [
+  {
+   "id": "s1",
+   "visual": "ikeaHook",
+   "vo": "Yesterday, I gave one sheep a box of chair parts. Now he says his wobbly chair is priceless.",
+   "emphasis": [
+    "parts.",
+    "priceless."
+   ],
+   "transition": "none",
+   "captionTop": 1390,
+   "sfx": [
+    {
+     "file": "thud.wav",
+     "volume": 0.4,
+     "at": 0.05
+    }
+   ],
+   "badge": "THE HIDDEN RULE #5"
+  },
+  {
+   "id": "s2",
+   "visual": "twinChair",
+   "vo": "The sheep next door got the same chair, already built. He'd swap his for a handful of grass.",
+   "emphasis": [
+    "same",
+    "grass."
+   ],
+   "transition": "none",
+   "captionTop": 1300,
+   "sfx": [
+    {
+     "file": "pop.wav",
+     "volume": 0.4,
+     "onWord": "swap"
+    }
+   ],
+   "swapOnWord": "swap"
+  },
+  {
+   "id": "s3",
+   "visual": "howMuch",
+   "vo": "So how much more is your own wobbly chair worth to you?",
+   "emphasis": [
+    "more"
+   ],
+   "transition": "none",
+   "captionTop": 1300,
+   "holdAfter": 0.2,
+   "clue": true,
+   "sfx": [
+    {
+     "file": "tick.wav",
+     "volume": 0.4,
+     "at": 0.1
+    }
+   ]
+  },
+  {
+   "id": "s4",
+   "visual": "ikeaCard",
+   "vo": "It's called the IKEA effect. In one study, people who built a plain storage box offered sixty-three percent more for it.",
+   "emphasis": [
+    "IKEA",
+    "sixty-three"
+   ],
+   "transition": "none",
+   "captionTop": 1300,
+   "clue": true,
+   "sfx": [
+    {
+     "file": "thud.wav",
+     "volume": 0.5,
+     "onWord": "IKEA"
+    }
+   ],
+   "buildOnWord": "people",
+   "pctOnWord": "sixty-three",
+   "holdAfter": 0.6
+  },
+  {
+   "id": "s5",
+   "visual": "catchScene",
+   "vo": "But here's the catch. When they didn't finish it, or had to take it apart, the extra love vanished.",
+   "emphasis": [
+    "catch.",
+    "vanished."
+   ],
+   "transition": "none",
+   "captionTop": 1300,
+   "sfx": [
+    {
+     "file": "brush.wav",
+     "volume": 0.4,
+     "onWord": "didn't"
+    }
+   ],
+   "breakOnWord": "didn't",
+   "holdAfter": 0.4
+  },
+  {
+   "id": "s6",
+   "visual": "ikeaOff",
+   "vo": "That's why your friend swears their own cooking is the best in the world. I know, because",
+   "emphasis": [
+    "own",
+    "best"
+   ],
+   "transition": "none",
+   "captionTop": 1300,
+   "holdAfter": 0,
+   "sfx": [],
+   "send": "SEND THIS TO THE FRIEND WHO THINKS THEIR COOKING IS THE BEST"
+  }
+ ],
+ "ttsOverrides": {}
+}
