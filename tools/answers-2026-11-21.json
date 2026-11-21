@@ -1,0 +1,176 @@
+{
+ "language": "en",
+ "voice": {
+  "engine": "kokoro",
+  "voice": "brit",
+  "speed": 1.0
+ },
+ "palette": {
+  "bg": "#07070b",
+  "accent": "#ff4d2e",
+  "gold": "#ffcc4d",
+  "text": "#ffffff"
+ },
+ "mix": {
+  "music": 0.3,
+  "sfx": 0.4
+ },
+ "loop": true,
+ "slug": "answers-2026-11-21",
+ "player": "Virgil van Dijk",
+ "music": {
+  "file": "music_mystic.wav",
+  "volume": 0.2
+ },
+ "character": {
+  "id": "boy",
+  "hair": "short",
+  "style": "cartoon",
+  "description": "Original cartoon player (not a likeness): short dark hair, white kit, navy shorts.",
+  "palette": {
+   "skin": "#shirt22-hero",
+   "rim": "#ffcc4d",
+   "shirt": "#14141c"
+  },
+  "toon": {
+   "skin": "#5a3a22",
+   "hair": "#141414",
+   "shirt": "#f8fafc",
+   "shorts": "#1e3a8a",
+   "boots": "#111111",
+   "socks": "#f8fafc"
+  }
+ },
+ "cta": "Guess today's mystery 👇",
+ "hook": "Three of you got this one. The hospital will was the big clue.",
+ "sources": [
+  "https://en.wikipedia.org/wiki/Virgil_van_Dijk",
+  "https://www.lfchistory.net/articles/4460"
+ ],
+ "scenes": [
+  {
+   "id": "a1-hook",
+   "visual": "answerHook",
+   "vo": "Three of you got this one. The hospital will was the big clue.",
+   "emphasis": [
+    "Three",
+    "will"
+   ],
+   "sfx": [
+    {
+     "file": "whoosh.wav",
+     "volume": 0.6,
+     "at": 0.1
+    },
+    {
+     "file": "stamp.wav",
+     "volume": 0.9,
+     "onWord": "Three"
+    }
+   ],
+   "transition": "flash",
+   "captionTop": 1360,
+   "title": "#19",
+   "title2": "ANSWER",
+   "sub": "THE DISHWASHER WITH A WILL",
+   "top": "ANSWER TIME"
+  },
+  {
+   "id": "a2-vvd",
+   "visual": "nameReveal",
+   "vo": "Number nineteen was Virgil van Dijk. He washed dishes as a teenager, then became the world's most expensive defender.",
+   "emphasis": [
+    "Virgil",
+    "dishes"
+   ],
+   "sfx": [
+    {
+     "file": "riser.wav",
+     "volume": 0.5,
+     "at": 0
+    },
+    {
+     "file": "boom.wav",
+     "volume": 0.9,
+     "onWord": "Virgil"
+    }
+   ],
+   "transition": "zoomBlur",
+   "captionTop": 1360,
+   "revealName": "Virgil van Dijk",
+   "revealPattern": "linear-gradient(180deg,#ae1c28 0 33%,#f8fafc 33% 66%,#21468b 66%)",
+   "revealPatternSize": "440px 440px",
+   "revealSub": "#19 · DISHWASHER → WORLD-RECORD DEFENDER"
+  },
+  {
+   "id": "a4-winners",
+   "visual": "winnersCard",
+   "vo": "Three correct guesses on Instagram. The first one came in fast. Great work, all three of you.",
+   "emphasis": [
+    "Three",
+    "first"
+   ],
+   "sfx": [
+    {
+     "file": "stamp.wav",
+     "volume": 0.9,
+     "onWord": "Three"
+    },
+    {
+     "file": "crowd.wav",
+     "volume": 0.5,
+     "onWord": "Great"
+    }
+   ],
+   "transition": "flash",
+   "captionTop": 1400,
+   "onWord": "Three",
+   "rows": [
+    {
+     "platform": "Instagram · #19 · first",
+     "user": "lg.alt.5"
+    },
+    {
+     "platform": "Instagram · #19",
+     "user": "othniel.bik"
+    },
+    {
+     "platform": "Instagram · #19",
+     "user": "gostrader_pinyjwok"
+    }
+   ],
+   "title": "THEY GOT IT",
+   "rowTop": 690,
+   "titleTop": 545
+  },
+  {
+   "id": "a5-cta",
+   "visual": "guessCard",
+   "vo": "Today's number twenty is already up. Be on this card tomorrow.",
+   "emphasis": [
+    "twenty",
+    "tomorrow."
+   ],
+   "sfx": [
+    {
+     "file": "boom.wav",
+     "volume": 0.7,
+     "onWord": "Today's"
+    }
+   ],
+   "transition": "none",
+   "captionTop": 1360,
+   "question": "YOUR TURN: #20",
+   "cta": "Guess today's mystery 👇",
+   "onWord": "Today's",
+   "pattern": "repeating-linear-gradient(0deg, #ae1c28 0 110px, #f8fafc 110px 220px, #21468b 220px 330px)",
+   "patternSize": "330px 330px",
+   "holdAfter": 0
+  }
+ ],
+ "ttsOverrides": {
+  "Dijk.": "Dike.",
+  "Dijk": "Dike",
+  "Virgil": "Virgil"
+ }
+}

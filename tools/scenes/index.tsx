@@ -54,6 +54,7 @@ import {STORY21_SCENES} from './story21';
 import {RULE3_SCENES} from './rule3';
 import {RULE4_SCENES} from './rule4';
 import {HISTORY9_SCENES} from './history9';
+import {STORY22_SCENES} from './story22';
 import {HISTORY1_SCENES} from './history1';
 import {HISTORY2_SCENES} from './history2';
 import {HISTORY3_SCENES} from './history3';
@@ -366,7 +367,8 @@ const NameReveal: React.FC<SceneProps> = ({sb, scene, captions, durationInFrames
   const {fps} = useVideoConfig();
   const name = (scene.revealName ?? sb.player).toUpperCase();
   const at = wordFrame(captions, name.split(' ')[0], fps, dur * 0.4);
-  const words = name.split(' ');
+  const parts = name.split(' ');
+  const words = parts.length > 2 ? [parts[0], parts.slice(1).join('\u00a0')] : parts;
   const flash = interpolate(frame - at, [0, 2, 14], [0, 1, 0], clamp);
   const bg = interpolate(frame, [at - 4, at + 12], [0, 1], {...clamp, easing: Easing.out(Easing.cubic)});
   return (
@@ -469,6 +471,7 @@ export const SCENES: Record<string, React.FC<SceneProps>> = {
   ...RULE3_SCENES,
   ...RULE4_SCENES,
   ...HISTORY9_SCENES,
+  ...STORY22_SCENES,
   ...HISTORY1_SCENES,
   ...HISTORY2_SCENES,
   ...HISTORY3_SCENES,

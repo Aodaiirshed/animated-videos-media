@@ -1,0 +1,239 @@
+{
+ "slug": "splints20-guess",
+ "player": "Jamie Vardy",
+ "language": "en",
+ "loop": true,
+ "voice": {
+  "engine": "kokoro",
+  "voice": "brit",
+  "speed": 1.03
+ },
+ "palette": {
+  "bg": "#07070b",
+  "accent": "#ff4d2e",
+  "gold": "#ffcc4d",
+  "text": "#ffffff"
+ },
+ "music": {
+  "file": "music_tension.wav",
+  "volume": 0.2
+ },
+ "mix": {
+  "music": 0.3,
+  "sfx": 0.4
+ },
+ "character": {
+  "id": "boy",
+  "hair": "short",
+  "style": "cartoon",
+  "description": "Original cartoon player (not a likeness).",
+  "palette": {
+   "skin": "#splints-hero",
+   "rim": "#ffcc4d",
+   "shirt": "#14141c"
+  },
+  "toon": {
+   "skin": "#f0c8a0",
+   "hair": "#2b1a10",
+   "shirt": "#64748b",
+   "shorts": "#1f2937",
+   "boots": "#111111",
+   "socks": "#64748b"
+  }
+ },
+ "cta": "Comment your guess",
+ "hook": "He made medical splints in a factory. Then he broke a Premier League record.",
+ "sources": [
+  "https://en.wikipedia.org/wiki/Jamie_Vardy",
+  "https://www.uefa.com/uefachampionsleague/news/0253-0d816f9afcee-549adcca5392-1000--the-rise-of-leicester-and-england-s-jamie-vardy",
+  "https://uk.sports.yahoo.com/news/stocksbridge-stardom-journey-jamie-vardy-033214456.html",
+  "https://www.thestar.co.uk/news/rise-jamie-vardy-460430",
+  "https://www.thenonleaguefootballpaper.com/?p=23928",
+  "https://www.irishexaminer.com/sport/soccer/arid-20334728.html",
+  "https://worldsoccertalk.com/news/he-was-dismissed-at-16-worked-in-a-factory-at-23-and-went-on-to-smash-legendary-premier-league-records"
+ ],
+ "factCheck": [
+  "released by his boyhood club at 16 for being too small — Wikipedia, Yahoo/Stocksbridge, The Star, Non-League Paper",
+  "carbon-fibre factory making medical splints — Yahoo, WorldSoccerTalk, Irish Examiner",
+  "about £30 a week at Stocksbridge (his own quote; some say per game) — Wikipedia, The Star, Irish Examiner",
+  "£1m in May 2012, a non-league record fee — Wikipedia, Non-League Paper, WorldSoccerTalk; he was 25",
+  "scored in 11 consecutive PL games, 29 Aug–28 Nov 2015, a record — UEFA, Wikipedia",
+  "league title 2016 — UEFA",
+  "AVOIDED: his assault conviction / tag (criminal history), and the 5000-1 angle (used for Mahrez)"
+ ],
+ "scenes": [
+  {
+   "id": "v1",
+   "visual": "recordHook",
+   "vo": "He made medical splints in a factory. Then he broke a Premier League record.",
+   "emphasis": [
+    "splints",
+    "record."
+   ],
+   "transition": "flash",
+   "captionTop": 1380,
+   "badge": "GUESS THE PLAYER #20",
+   "sfx": [
+    {
+     "file": "kick.wav",
+     "volume": 0.6,
+     "at": 0.02
+    },
+    {
+     "file": "crowd.wav",
+     "volume": 0.4,
+     "at": 0.2
+    },
+    {
+     "file": "stamp.wav",
+     "volume": 0.6,
+     "onWord": "record."
+    }
+   ],
+   "recordOnWord": "record."
+  },
+  {
+   "id": "v2",
+   "visual": "elevenRow",
+   "vo": "Eleven games in a row. He scored in every single one. Nobody had ever done it.",
+   "emphasis": [
+    "Eleven",
+    "every",
+    "Nobody"
+   ],
+   "transition": "whipPan",
+   "captionTop": 1380,
+   "badge": "GUESS THE PLAYER #20",
+   "sfx": [
+    {
+     "file": "pop.wav",
+     "volume": 0.5,
+     "onWord": "Eleven"
+    },
+    {
+     "file": "boom.wav",
+     "volume": 0.6,
+     "onWord": "Nobody"
+    }
+   ],
+   "startOnWord": "Eleven",
+   "endOnWord": "one.",
+   "nobodyOnWord": "Nobody"
+  },
+  {
+   "id": "v3",
+   "visual": "tooSmall",
+   "vo": "At sixteen, his boyhood club released him. Too small, they said.",
+   "emphasis": [
+    "sixteen,",
+    "small,"
+   ],
+   "transition": "zoomBlur",
+   "captionTop": 1380,
+   "badge": "GUESS THE PLAYER #20",
+   "sfx": [
+    {
+     "file": "stamp.wav",
+     "volume": 0.7,
+     "onWord": "small,"
+    }
+   ],
+   "stampOnWord": "small,"
+  },
+  {
+   "id": "v4",
+   "visual": "factoryShift",
+   "vo": "So he did factory shifts, and played non-league for about thirty pounds a week.",
+   "emphasis": [
+    "factory",
+    "thirty"
+   ],
+   "transition": "whipPan",
+   "captionTop": 1380,
+   "badge": "GUESS THE PLAYER #20",
+   "sfx": [
+    {
+     "file": "tick.wav",
+     "volume": 0.5,
+     "onWord": "factory"
+    },
+    {
+     "file": "kick.wav",
+     "volume": 0.5,
+     "onWord": "non-league"
+    }
+   ],
+   "pitchOnWord": "non-league",
+   "payOnWord": "thirty"
+  },
+  {
+   "id": "v5",
+   "visual": "millionFee",
+   "vo": "So what was he worth at twenty-five? One million pounds. A record for a non-league player.",
+   "emphasis": [
+    "One",
+    "record"
+   ],
+   "transition": "flash",
+   "captionTop": 1380,
+   "badge": "GUESS THE PLAYER #20",
+   "sfx": [
+    {
+     "file": "riser.wav",
+     "volume": 0.4,
+     "onWord": "worth"
+    },
+    {
+     "file": "boom.wav",
+     "volume": 0.7,
+     "onWord": "One"
+    }
+   ],
+   "feeOnWord": "One",
+   "recordOnWord": "record"
+  },
+  {
+   "id": "v6",
+   "visual": "titleCheer",
+   "vo": "Then came the record run, and a league title nobody saw coming.",
+   "emphasis": [
+    "title"
+   ],
+   "transition": "flash",
+   "captionTop": 1380,
+   "badge": "GUESS THE PLAYER #20",
+   "sfx": [
+    {
+     "file": "crowd.wav",
+     "volume": 0.6,
+     "onWord": "title"
+    }
+   ],
+   "cupOnWord": "title"
+  },
+  {
+   "id": "v7",
+   "visual": "guessCard",
+   "vo": "Who is he? Comment your guess. Answer tomorrow.",
+   "emphasis": [
+    "Who"
+   ],
+   "transition": "none",
+   "captionTop": 1380,
+   "badge": "GUESS THE PLAYER #20",
+   "sfx": [
+    {
+     "file": "stamp.wav",
+     "volume": 0.6,
+     "onWord": "Who"
+    }
+   ],
+   "question": "WHO IS HE?",
+   "cta": "Comment your guess 👇",
+   "onWord": "Who",
+   "pattern": "linear-gradient(90deg, transparent 0 42%, #ce1124 42% 58%, transparent 58% 100%), linear-gradient(180deg, #f8fafc 0 42%, #ce1124 42% 58%, #f8fafc 58% 100%)",
+   "patternSize": "100% 100%",
+   "holdAfter": 0
+  }
+ ]
+}

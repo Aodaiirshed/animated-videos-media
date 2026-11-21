@@ -208,7 +208,7 @@ const WinnersCard: React.FC<SceneProps> = ({scene, captions, durationInFrames: d
   const trophy = spring({frame: frame - oAt, fps, config: {damping: 9, stiffness: 160}});
   const compact = rows.length > 3;
   const rowH = compact ? 168 : 230;
-  const rowTop = compact ? 630 : 760;
+  const rowTop = (scene.rowTop as number) ?? (compact ? 630 : 760);
   return (
     <Shake at={oAt} amount={14}>
       <Camera dur={dur} from={1.0} to={1.06}>
@@ -224,7 +224,7 @@ const WinnersCard: React.FC<SceneProps> = ({scene, captions, durationInFrames: d
           <rect x={80} y={250} width={140} height={50} rx={8} fill="#92400e" stroke={OL} strokeWidth={8} />
           <text x={150} y={130} textAnchor="middle" fontFamily={DISPLAY} fontSize={70} fill="#fff7d6" stroke={OL} strokeWidth={4} paintOrder="stroke">#1</text>
         </svg>
-        <div style={{position: 'absolute', top: compact ? 520 : 560, width: '100%', textAlign: 'center', fontFamily: DISPLAY, fontSize: compact ? 90 : 100, color: '#fff', WebkitTextStroke: `8px ${OL}`, paintOrder: 'stroke fill', opacity: trophy}}>{(scene.title as string) ?? 'FIRST TO GET IT'}</div>
+        <div style={{position: 'absolute', top: (scene.titleTop as number) ?? (compact ? 520 : 560), width: '100%', textAlign: 'center', fontFamily: DISPLAY, fontSize: compact ? 90 : 100, color: '#fff', WebkitTextStroke: `8px ${OL}`, paintOrder: 'stroke fill', opacity: trophy}}>{(scene.title as string) ?? 'FIRST TO GET IT'}</div>
         {rows.map((r, i) => {
           const s = spring({frame: frame - oAt - 8 - i * 10, fps, config: {damping: 12}});
           return (
