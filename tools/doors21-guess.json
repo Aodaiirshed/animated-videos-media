@@ -1,0 +1,254 @@
+{
+ "language": "en",
+ "loop": true,
+ "voice": {
+  "engine": "kokoro",
+  "voice": "brit",
+  "speed": 1.03
+ },
+ "palette": {
+  "bg": "#07070b",
+  "accent": "#ff4d2e",
+  "gold": "#ffcc4d",
+  "text": "#ffffff"
+ },
+ "mix": {
+  "music": 0.3,
+  "sfx": 0.4
+ },
+ "character": {
+  "id": "boy",
+  "hair": "short",
+  "style": "cartoon",
+  "description": "Original cartoon player (not a likeness).",
+  "palette": {
+   "skin": "#rejected-hero",
+   "rim": "#ffcc4d",
+   "shirt": "#14141c"
+  },
+  "toon": {
+   "skin": "#6b4226",
+   "hair": "#141414",
+   "shirt": "#64748b",
+   "shorts": "#1f2937",
+   "boots": "#111111",
+   "socks": "#64748b"
+  }
+ },
+ "slug": "doors21-guess",
+ "player": "Eberechi Eze",
+ "music": {
+  "file": "px_inspiration-piano-music.mp3",
+  "gainDb": -2
+ },
+ "cta": "Comment your guess",
+ "hook": "Four academies released him before he turned eighteen. The first one let him go at thirteen.",
+ "sources": [
+  "https://en.wikipedia.org/wiki/Eberechi_Eze",
+  "https://www.englandfootball.com/articles/2023/Jun/14/eberechi-eze-grassroots-story-coaches-release-20230614",
+  "https://www.premierleague.com/en/news/4387283/ezes-incredible-journey-of-rejection-and-resilience",
+  "https://global.espn.com/football/story/_/id/46067571/ezes-long-journey-back-arsenal-shows-why-never-give-up",
+  "https://www.planetfootball.com/arsenal/players-we-cant-believe-arsenal-released-youngsters",
+  "https://www.goal.com/en/lists/eberechi-eze-deserved-released-youngster-suffering-arsenal-heartbreak-60m-being-delusional-early-setbacks/blt6c16389ec9c11280",
+  "https://www.thefa.com/news/2025/may/17/emirates-fa-cup-final-crystal-palace-manchester-city-report-20251705",
+  "https://www.irishtimes.com/sport/soccer/2025/05/17/eagles-soar-as-eberechi-eze-secures-fa-cup-glory-for-crystal-palace-against-man-city",
+  "https://www.aol.com/news/eberechi-eze-recalls-emotional-reaction-103230599.html",
+  "https://capitalfm.africa/why-67m-eze-has-been-battling-for-arsenal-minutes/",
+  "https://www.fotmob.com/players/818975",
+  "https://www.uefa.com/uefachampionsleague/clubs/players/250134376--eberechi-eze/matches/"
+ ],
+ "factCheck": [
+  "released by Arsenal at 13, then Fulham, Reading and Millwall — all before 18 (Wikipedia, England Football 'released four times', ESPN, Sky)",
+  "'I couldn't focus, I was just crying' at training after the Arsenal release (Planet Football quoting Eze; Goal 'I cried when I was released')",
+  "Millwall release at 17 + 'I probably deserved to get released' (Goal/Akinfenwa interview; Wikipedia: Millwall, no pro contract, 2016)",
+  "QPR (then Championship = second tier) signed him in 2016 (Wikipedia)",
+  "scored the only goal of the 2025 FA Cup final, Palace 1-0 Man City (The FA, Irish Times, Reuters/Dawn, ESPN)",
+  "back to Arsenal for £60m + £7.5m add-ons, Aug 2025 (AOL/Independent, ESPN £67.5m, Sky)",
+  "hat-trick in a 4-1 PL win over Tottenham, Nov 2025 (CapitalFM/AFP, ESPN, Fox)",
+  "Premier League 2025/26 winner with Arsenal; still at Arsenal 2026/27 (FotMob, UEFA 2026/27 matches page)"
+ ],
+ "scenes": [
+  {
+   "id": "e1",
+   "visual": "fourDoors",
+   "vo": "Four academies released him before he turned eighteen. The first one let him go at thirteen.",
+   "emphasis": [
+    "Four",
+    "thirteen."
+   ],
+   "transition": "flash",
+   "captionTop": 1380,
+   "badge": "GUESS THE PLAYER #21",
+   "sfx": [
+    {
+     "file": "whoosh.wav",
+     "volume": 0.5,
+     "at": 0.02
+    },
+    {
+     "file": "stamp.wav",
+     "volume": 0.6,
+     "onWord": "Four"
+    },
+    {
+     "file": "thud.wav",
+     "volume": 0.6,
+     "onWord": "thirteen."
+    }
+   ],
+   "fourOnWord": "Four",
+   "firstOnWord": "thirteen."
+  },
+  {
+   "id": "e2",
+   "visual": "cryTraining",
+   "vo": "He said he couldn't stop crying at training. Then came another club, another trial, another no.",
+   "emphasis": [
+    "crying",
+    "no."
+   ],
+   "transition": "whipPan",
+   "captionTop": 1380,
+   "badge": "GUESS THE PLAYER #21",
+   "sfx": [
+    {
+     "file": "pop.wav",
+     "volume": 0.5,
+     "onWord": "another"
+    }
+   ],
+   "trialOnWord": "another"
+  },
+  {
+   "id": "e3",
+   "visual": "seventeenNo",
+   "vo": "At seventeen, the fourth one let him go too. He thought he probably deserved it.",
+   "emphasis": [
+    "seventeen,",
+    "deserved"
+   ],
+   "transition": "zoomBlur",
+   "captionTop": 1380,
+   "badge": "GUESS THE PLAYER #21",
+   "sfx": [
+    {
+     "file": "stamp.wav",
+     "volume": 0.7,
+     "onWord": "fourth"
+    }
+   ],
+   "stampOnWord": "fourth",
+   "thoughtOnWord": "thought"
+  },
+  {
+   "id": "e4",
+   "visual": "cupFinal",
+   "vo": "A second-tier club gave him a chance. Years later, he scored the winner in an F.A. Cup final.",
+   "emphasis": [
+    "chance.",
+    "winner"
+   ],
+   "transition": "flash",
+   "captionTop": 1380,
+   "badge": "GUESS THE PLAYER #21",
+   "sfx": [
+    {
+     "file": "pop.wav",
+     "volume": 0.5,
+     "onWord": "chance."
+    },
+    {
+     "file": "kick.wav",
+     "volume": 0.6,
+     "onWord": "winner"
+    },
+    {
+     "file": "crowd.wav",
+     "volume": 0.5,
+     "onWord": "final."
+    }
+   ],
+   "chanceOnWord": "chance.",
+   "finalOnWord": "scored"
+  },
+  {
+   "id": "e5",
+   "visual": "backHome",
+   "vo": "So where did he end up? Back at the club that released him at thirteen. For sixty million pounds.",
+   "emphasis": [
+    "Back",
+    "sixty"
+   ],
+   "transition": "flash",
+   "captionTop": 1380,
+   "badge": "GUESS THE PLAYER #21",
+   "sfx": [
+    {
+     "file": "riser.wav",
+     "volume": 0.4,
+     "onWord": "where"
+    },
+    {
+     "file": "boom.wav",
+     "volume": 0.6,
+     "onWord": "Back"
+    },
+    {
+     "file": "stamp.wav",
+     "volume": 0.6,
+     "onWord": "sixty"
+    }
+   ],
+   "backOnWord": "Back",
+   "feeOnWord": "sixty"
+  },
+  {
+   "id": "e6",
+   "visual": "derbyTitle",
+   "vo": "Then a derby hat-trick, and a league title.",
+   "emphasis": [
+    "hat-trick,",
+    "title."
+   ],
+   "transition": "flash",
+   "captionTop": 1380,
+   "badge": "GUESS THE PLAYER #21",
+   "sfx": [
+    {
+     "file": "crowd.wav",
+     "volume": 0.6,
+     "onWord": "title."
+    }
+   ],
+   "hatOnWord": "derby",
+   "titleOnWord": "title."
+  },
+  {
+   "id": "e7",
+   "visual": "guessCard",
+   "vo": "Who is he? Comment your guess. Answer tomorrow.",
+   "emphasis": [
+    "Who"
+   ],
+   "transition": "none",
+   "captionTop": 1380,
+   "badge": "GUESS THE PLAYER #21",
+   "sfx": [
+    {
+     "file": "stamp.wav",
+     "volume": 0.6,
+     "onWord": "Who"
+    }
+   ],
+   "question": "WHO IS HE?",
+   "cta": "Comment your guess 👇",
+   "onWord": "Who",
+   "pattern": "linear-gradient(90deg, transparent 0 42%, #ce1124 42% 58%, transparent 58% 100%), linear-gradient(180deg, #f8fafc 0 42%, #ce1124 42% 58%, #f8fafc 58% 100%)",
+   "patternSize": "100% 100%",
+   "holdAfter": 0
+  }
+ ],
+ "ttsOverrides": {
+  "F.A.": "F A"
+ }
+}
