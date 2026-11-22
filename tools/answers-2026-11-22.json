@@ -1,0 +1,168 @@
+{
+ "language": "en",
+ "voice": {
+  "engine": "kokoro",
+  "voice": "brit",
+  "speed": 1.0
+ },
+ "palette": {
+  "bg": "#07070b",
+  "accent": "#ff4d2e",
+  "gold": "#ffcc4d",
+  "text": "#ffffff"
+ },
+ "loop": true,
+ "slug": "answers-2026-11-22",
+ "player": "Jamie Vardy",
+ "music": {
+  "file": "px_drift-phonk-instrumental.mp3",
+  "gainDb": -2
+ },
+ "character": {
+  "id": "boy",
+  "hair": "short",
+  "style": "cartoon",
+  "description": "Original cartoon player (not a likeness).",
+  "palette": {
+   "skin": "#splints-hero",
+   "rim": "#ffcc4d",
+   "shirt": "#14141c"
+  },
+  "toon": {
+   "skin": "#f0c8a0",
+   "hair": "#2b1a10",
+   "shirt": "#64748b",
+   "shorts": "#1f2937",
+   "boots": "#111111",
+   "socks": "#64748b"
+  }
+ },
+ "cta": "Guess today's mystery 👇",
+ "hook": "Three of you got this one. The factory was the big clue.",
+ "sources": [
+  "https://en.wikipedia.org/wiki/Jamie_Vardy",
+  "https://www.uefa.com/uefachampionsleague/news/0253-0d816f9afcee-549adcca5392-1000--the-rise-of-leicester-and-england-s-jamie-vardy"
+ ],
+ "scenes": [
+  {
+   "id": "a1-hook",
+   "visual": "answerHook",
+   "vo": "Three of you got this one. The factory was the big clue.",
+   "emphasis": [
+    "Three",
+    "factory"
+   ],
+   "sfx": [
+    {
+     "file": "whoosh.wav",
+     "volume": 0.6,
+     "at": 0.1
+    },
+    {
+     "file": "stamp.wav",
+     "volume": 0.9,
+     "onWord": "Three"
+    }
+   ],
+   "transition": "flash",
+   "captionTop": 1360,
+   "title": "#20",
+   "title2": "ANSWER",
+   "sub": "FROM FACTORY TO RECORD",
+   "top": "ANSWER TIME"
+  },
+  {
+   "id": "a2-vardy",
+   "visual": "nameReveal",
+   "vo": "Number twenty was Jamie Vardy. He made splints in a factory, then scored in eleven Premier League games in a row.",
+   "emphasis": [
+    "Jamie",
+    "eleven"
+   ],
+   "sfx": [
+    {
+     "file": "riser.wav",
+     "volume": 0.5,
+     "at": 0
+    },
+    {
+     "file": "boom.wav",
+     "volume": 0.6,
+     "onWord": "Jamie"
+    }
+   ],
+   "transition": "zoomBlur",
+   "captionTop": 1360,
+   "revealName": "Jamie Vardy",
+   "revealPattern": "linear-gradient(90deg, transparent 0 42%, #ce1124 42% 58%, transparent 58% 100%), linear-gradient(180deg, #f8fafc 0 42%, #ce1124 42% 58%, #f8fafc 58% 100%)",
+   "revealPatternSize": "100% 100%",
+   "revealSub": "#20 · FACTORY SHIFTS → PL RECORD"
+  },
+  {
+   "id": "a4-winners",
+   "visual": "winnersCard",
+   "vo": "Three correct guesses on Instagram. The first one came in within an hour. Great work, all three of you.",
+   "emphasis": [
+    "Three",
+    "first"
+   ],
+   "sfx": [
+    {
+     "file": "stamp.wav",
+     "volume": 0.9,
+     "onWord": "Three"
+    },
+    {
+     "file": "crowd.wav",
+     "volume": 0.5,
+     "onWord": "Great"
+    }
+   ],
+   "transition": "flash",
+   "captionTop": 1400,
+   "onWord": "Three",
+   "rows": [
+    {
+     "platform": "Instagram · #20 · first",
+     "user": "_decm_"
+    },
+    {
+     "platform": "Instagram · #20",
+     "user": "kashaaf._a"
+    },
+    {
+     "platform": "Instagram · #20",
+     "user": "jeremiahthe1st2011"
+    }
+   ],
+   "title": "THEY GOT IT",
+   "rowTop": 690,
+   "titleTop": 545
+  },
+  {
+   "id": "a5-cta",
+   "visual": "guessCard",
+   "vo": "Today's number twenty-one is already up. Be on this card tomorrow.",
+   "emphasis": [
+    "twenty-one",
+    "tomorrow."
+   ],
+   "sfx": [
+    {
+     "file": "boom.wav",
+     "volume": 0.7,
+     "onWord": "Today's"
+    }
+   ],
+   "transition": "none",
+   "captionTop": 1360,
+   "question": "YOUR TURN: #21",
+   "cta": "Guess today's mystery 👇",
+   "onWord": "Today's",
+   "pattern": "repeating-linear-gradient(45deg, #1f2937 0 60px, #111827 60px 120px)",
+   "patternSize": "auto",
+   "holdAfter": 0
+  }
+ ],
+ "ttsOverrides": {}
+}
