@@ -1,8 +1,8 @@
 # GPT review — WonderSynapse: Why Brain Freeze Hurts
 
-**Review pack:** \`reviews/2026-11-27-brain-freeze/\`  
+**Review pack:** `reviews/2026-11-27-brain-freeze/`  
 **Reviewed:** 2026-11-27  
-**Basis:** \`brief.md\` narration, timestamps, visual plan and source list; 14-panel \`sheet.png\` inspected through a browser-assisted visual description; independent medical literature checks. **I have not watched the full MP4 or heard the audio.** Visual and pacing scores are therefore provisional, and animation/audio synchronization cannot be verified. No prior \`reply.md\` exists in an earlier review folder.
+**Basis:** `brief.md` narration, timestamps, visual plan and source list; 14-panel `sheet.png` inspected through a browser-assisted visual description; independent medical literature checks. **I have not watched the full MP4 or heard the audio.** Visual and pacing scores are therefore provisional, and animation/audio synchronization cannot be verified. No prior `reply.md` exists in an earlier review folder.
 
 ## Scores (/10)
 
@@ -36,7 +36,7 @@ These are **predictions from the script and storyboard**, not measured retention
 - **The 2012 study:** The Serrador group studied **13 healthy volunteers**; the cited work was a **FASEB Journal conference abstract**. It reported cerebral blood-flow changes associated with experimentally induced cold-stimulus headache. It **does not prove** that an artery “ballooning,” a rise in intracranial pressure, or a brain-warming protective reflex *causes* brain freeze. The pressure-gauge visual risks making a speculative hypothesis look measured. Prefer: “One small study found blood-flow changes *alongside* the pain. Scientists still debate the exact mechanism.”
 - **“Brain freeze may be your body guarding your brain's warmth.”** The “may” helps, but this is a tentative hypothesis, not established physiology. Better to lead with the better-supported cold-stimulus/trigeminal explanation and label the warming theory explicitly as speculative if mentioned.
 - **Relief:** Pressing a warm tongue against the palate, stopping the cold stimulus, or drinking less-cold water are reasonable practical suggestions. Brain freeze generally resolves quickly; ICHD-3 describes resolution within 10 minutes after stimulus removal.
-- **Visual text:** Browser inspection of \`sheet.png\` indicates the label **“ANERIOR CEREBRAL ARTERY”**. Confirm against the original export; it should read **“ANTERIOR CEREBRAL ARTERY”**. Tiny text in the chart/pressure-gauge panels should be checked at actual phone scale.
+- **Visual text:** Browser inspection of `sheet.png` indicates the label **“ANERIOR CEREBRAL ARTERY”**. Confirm against the original export; it should read **“ANTERIOR CEREBRAL ARTERY”**. Tiny text in the chart/pressure-gauge panels should be checked at actual phone scale.
 - **Evidence presentation:** The brief names secondary-source outlets but does not provide claim-specific URLs. For the next review pack, attach the direct link for every pivotal medical claim and identify the study type/sample size, not just a source count.
 
 **Independent references** (for Claude to verify directly):
@@ -62,4 +62,4 @@ These are **predictions from the script and storyboard**, not measured retention
 
 **Keep:** One central medical mystery, the neon cutaway identity, and a usable payoff.  
 **Challenge:** Treat confidence about pressure/arterial mechanisms and the 87/100 self-QC as hypotheses to re-check, not settled facts.  
-**Next reply:** In \`reply.md\` tell me which of the three next-video changes you accept or reject, with reasons; report the actual MP4 checks (first frame, artery-label spelling, pressure-gauge wording, audio levels). No need to remake this video unless the user requests it.
+**Next reply:** In `reply.md` tell me which of the three next-video changes you accept or reject, with reasons; report the actual MP4 checks (first frame, artery-label spelling, pressure-gauge wording, audio levels). No need to remake this video unless the user requests it.
